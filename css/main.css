@@ -1,0 +1,225 @@
+@font-face {
+    font-family: neon;
+    src: url('../fonts/NEON.TTF');
+}
+
+:root {
+    --bg-color: #131313;
+    --bg-color-glitch: #080808;
+
+    --logo-col: #FED128;
+    --logo-col-2: #FB4264;
+    --logo-shadow: #FA1C16;
+    --logo-shadow-2: #806914;
+}
+
+html, body {
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 0;
+}
+
+.logo__neon {
+    position: relative;
+    display: block;
+
+    font-family: neon;
+    font-size: 136px;
+    line-height: 1;
+    color: var(--logo-col);
+    text-shadow:
+        0 0 1vw var(--logo-shadow),
+        0 0 3vw var(--logo-shadow),
+        0 0 10vw var(--logo-shadow),
+        0 0 10vw var(--logo-shadow),
+        0 0 .4vw var(--logo-col),
+        .5vw .5vw .1vw var(--logo-shadow-2);
+
+}
+
+.logo__neon-bot {
+    padding-left: 175px;
+}
+
+.logo-invis {
+    opacity: 0;
+}
+
+.logo-trick {
+    position: absolute;
+
+    left: 26px;
+    bottom: -18px;
+
+    font-size: 306px;
+}
+
+.logo_wrap {
+    position: relative;
+
+    width: 584px;
+    height: 272px;
+
+    background-color: var(--bg-color);
+
+    text-align: left;
+}
+
+.logo {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+}
+
+.logo-based {
+    animation: switch1 17s step-start infinite;
+}
+
+@keyframes switch1 {
+    0%,
+    19%,
+    20%,
+    21%,
+    40%,
+    39%,
+    42%,
+    55%,
+    56%,
+    70%,
+    95%,
+    100% {
+        opacity: 1;
+        transform: skew(0deg);
+    }
+    20.1%,
+    20.9%,
+    40.1%,
+    41.9%,
+    70.1%,
+    94.9% {
+        opacity: 0;
+    }
+    19.5% {
+        transform: skew(5deg);
+    }
+    39.5% {
+        transform: skew(15deg);
+    }
+    55.5% {
+        transform: skew(-5deg);
+    }
+}
+
+.logo-glitch {
+    animation: switch2 17s step-start infinite;
+}
+
+@keyframes switch2 {
+    0%,
+    20%,
+    21%,
+    40%,
+    42%,
+    70%,
+    95%,
+    100% {
+        opacity: 0;
+    }
+    20.1%,
+    20.9%,
+    40.1%,
+    41.9%,
+    70.1%,
+    94.9% {
+        opacity: 1;
+    }
+}
+
+.logo-shift {
+    animation: shift 17s step-start infinite;
+    clip-path: polygon(0 20%, 100% 20%, 100% 40%, 0 40%);
+    transform: none;
+    background: var(--bg-color-glitch);
+}
+
+.logo-shift-1 {
+    clip-path: polygon(0 50%, 100% 50%, 100% 60%, 0 60%);
+}
+
+.logo-shift-2 {
+    clip-path: polygon(0 0%, 100% 0%, 100% 10%, 0 10%);
+}
+
+.logo-shift-2 {
+    clip-path: polygon(0 90%, 100% 90%, 100% 100%, 0 100%);
+}
+
+@keyframes shift {
+    0%,
+    19%,
+    39%,
+    69%,
+    95%,
+    20.1%,
+    40.1%,
+    55%,
+    56%,
+    70.1%,
+    95.2%,
+    96% {
+        transform: none;
+        opacity: 0;
+    }
+    20%,
+    40%,
+    55.2%,
+    55.8%,
+    70%,
+    95.4%,
+    95.8% {
+        transform: translate(5px, -2px);
+        opacity: 1;
+    }
+}
+
+.logo-glitch-shift {
+    animation: shift2 17s step-start infinite;
+    clip-path: polygon(0 20%, 100% 20%, 100% 50%, 0 50%);
+    transform: none;
+    background: var(--bg-color-glitch);
+}
+
+@keyframes shift2 {
+    0%,
+    20.5%,
+    21%,
+    41.5%,
+    42%,
+    94.2%,
+    95%,
+    100% {
+        transform: none;
+        opacity: 0;
+    }
+    20.7%,
+    20.9%,
+    41.7%,
+    41.9%,
+    94.3%,
+    94.9% {
+        opacity: 1;
+        transform: translate(5px, -2px);
+    }
+}
+
+.logo_section {
+      height: 100vh;
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+      justify-content: center;
+      -ms-align-items: center;
+      align-items: center;
+      background-color: #131313;
+}
