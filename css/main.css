@@ -34,7 +34,6 @@ html, body {
         0 0 10vw var(--logo-shadow),
         0 0 .4vw var(--logo-col),
         .5vw .5vw .1vw var(--logo-shadow-2);
-
 }
 
 .logo__neon-bot {
@@ -214,12 +213,14 @@ html, body {
 }
 
 .logo_section {
-      height: 100vh;
-      display: -webkit-flex;
-      display: -ms-flex;
-      display: flex;
-      justify-content: center;
-      -ms-align-items: center;
-      align-items: center;
-      background-color: #131313;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    justify-content: center;
+    -ms-align-items: center;
+    align-items: center;
+
+    height: 100vh;
+
+    background-color: var(--bg-color);
 }
