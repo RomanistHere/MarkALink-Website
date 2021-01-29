@@ -1,0 +1,255 @@
+:root {
+    --skew-height-1: calc(100vw * 0.06993);
+    --def-trs: all ease .3s;
+    --neon-trs-1: color ease .3s, text-shadow ease .2s, box-shadow ease .2s;
+}
+
+*::selection {
+    background: var(--shadow-col-1);
+}
+
+.skewed {
+    position: absolute;
+    z-index: 1;
+
+    top: 100%;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: var(--skew-height-1);
+
+    background: var(--bg-color);
+
+    transform: skewY(4deg);
+    transform-origin: top right;
+}
+
+.title {
+    padding: calc(var(--skew-height-1) - 20px) 0 50px;
+    margin: 0;
+
+    text-align: center;
+    font-size: 80px;
+
+    text-shadow:
+        0 0 10px var(--color1),
+        0 0 20px var(--color2),
+        0 0 40px var(--color3);
+    will-change: filter, color;
+    filter: saturate(60%);
+}
+
+.title-black {
+    --color1: #000;
+    --color2: gray;
+    --color3: #141414;
+    --color4: #181818;
+}
+
+.game__title {
+    display: inline-block;
+    padding: 0;
+
+    font-size: 44px;
+}
+
+.glitch_wrap {
+    display: inline-block;
+}
+
+.glitch_text {
+    --color1: red;
+    --color2: #f37070;
+    --color3: #ff6464;
+    --color4: #ff00cb;
+
+    color: var(--color1);
+    font-family: Godsownjunkyard;
+    text-decoration: none;
+    text-shadow:
+        0 0 2px var(--color1),
+        0 0 5px var(--color1),
+        0 0 10px var(--color1),
+        0 0 20px var(--color2),
+        0 0 40px var(--color3),
+        0 0 80px var(--color4);
+
+    transition: var(--neon-trs-1);
+}
+
+.neon_border {
+    padding: 20px;
+    border-radius: 20px;
+
+    --neon-border-col: red;
+
+    border: 1px solid var(--neon-border-col);
+    box-shadow:
+        0 0 2px var(--neon-border-col),
+        0 0 5px var(--neon-border-col),
+        0 0 10px var(--neon-border-col),
+        0 0 10px var(--neon-border-col),
+        0 0 2px var(--neon-border-col),
+        inset 0 0 2px var(--neon-border-col),
+        inset 0 0 5px var(--neon-border-col),
+        inset 0 0 10px var(--neon-border-col),
+        inset 0 0 10px var(--shadow-col-1),
+        inset 0 0 2px var(--neon-border-col);
+
+    transition: var(--neon-trs-1);
+}
+
+.success .neon_border {
+    --neon-border-col: #008014;
+    --shadow-col-1: #00a978;
+}
+
+.success .glitch_text {
+    --color1: #008014;
+    --color2: #50cc50;
+    --color3: #00b700;
+    --color4: #00a978;
+}
+
+/* // game // */
+
+.game {
+    --blue-glitch: #2fd9ea;
+    --violet-glitch: #62028a;
+    --pink-glitch: #8a0273;
+    --pink-glitch-dark: #84036e;
+    --aqua-glitch: #048282;
+    --green: #296b0e;
+    --brigth-gray: #a29ea1;
+    --violet-good: #9e638f;
+
+    position: relative;
+
+    text-align: center;
+    overflow: hidden;
+
+    background-color: var(--logo-col);
+}
+
+.game-overlay {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+
+    top: 0;
+    left: -100px;
+    right: -100px;
+    height: 100%;
+}
+
+@keyframes gameSectionGlitch {
+    0%, 8%, 32%, 59%, 68%, 77%, 100% {
+        clip-path: polygon(0 50%, 100% 50%, 100% 60%, 0 60%);
+        background-color: var(--pink-glitch-dark);
+        opacity: 0;
+        transform: none;
+    }
+    10%, 30%, 48%, 58%, 69%, 76% {
+        opacity: 1;
+    }
+    20% {
+        clip-path: polygon(0% 5%, 100% 7%, 100% 95%, 0% 97%, 0% 80%, 100% 80%, 100% 65%, 0% 63%, 0% 32%, 100% 34%, 100% 20%, 0% 16%);
+        transform: translate(10px, -8px);
+    }
+    25% {
+        clip-path: polygon(0% 5%, 100% 7%, 100% 95%, 0% 97%, 0% 80%, 100% 80%, 100% 65%, 0% 63%, 0% 32%, 100% 34%, 100% 20%, 0% 16%);
+        transform: translate(140px, -28px);
+    }
+    28% {
+        clip-path: polygon(0% 5%, 100% 7%, 100% 95%, 0% 97%, 0% 80%, 100% 80%, 100% 65%, 0% 63%, 0% 32%, 100% 34%, 100% 20%, 0% 16%);
+        transform: translate(-30px, -5px);
+    }
+    50% {
+        clip-path: polygon(0 0%, 100% 0%, 100% 89%, 0 89%, 0 71%, 100% 72%, 100% 28%, 0 28%);
+        transform: translate(50px, -8px);
+    }
+    53% {
+        transform: translate(70px, -15px);
+    }
+    56% {
+        clip-path: polygon(0 0%, 100% 0%, 100% 89%, 0 89%, 0 71%, 100% 72%, 100% 28%, 0 28%);
+        transform: translate(-60px, -100px);
+    }
+    70%, 75% {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 77%, 0 77%, 0 74%, 100% 72%, 100% 72%, 0 70%, 0 60%, 100% 59%, 100% 51%, 0 49%, 0 20%, 100% 31%, 100% 10%);
+        clip-path: polygon(0 1%, 100% 0%, 100% 77%, 0 77%, 0 74%, 100% 72%, 100% 72%, 0 70%, 0 60%, 100% 59%, 100% 55%, 0 55%, 0 20%, 100% 31%, 100% 15%);
+        transform: translate(-30px, -5px);
+        background-color: var(--blue-glitch);
+    }
+    71% {
+        transform: translate(-10px, 5px);
+    }
+    72% {
+        transform: translate(-40px, 8px);
+    }
+    73% {
+        transform: translate(10px, 5px);
+    }
+    74% {
+        transform: translate(-10px, 20px);
+    }
+}
+
+.game__field:hover + .game-overlay-1 + .game-overlay {
+    animation: gameSectionGlitch 1.5s ease-out;
+}
+
+.game__field:hover + .game-overlay-1 {
+    animation: gameSectionBg 1.5s ease-out;
+}
+
+@keyframes gameSectionBg {
+    13%, 74% {
+        opacity: 1;
+        background-color: var(--pink-glitch);
+    }
+    12%, 75% {
+        opacity: 0;
+    }
+}
+
+.game__field {
+    margin: 80px auto 150px;
+    width: 800px;
+}
+
+/* // cells // */
+
+.game__cell_wrap {
+    display: inline-block;
+
+    filter: drop-shadow(0 0 10px var(--bg-color));
+}
+
+.game__cell {
+    display: inline-block;
+
+    width: 100px;
+    height: 100px;
+    margin: 24px;
+
+    background: var(--violet-good);
+
+    clip-path: polygon(0% 0%, 12% 14%, 65% 14%, 76% 0, 100% 0%, 100% 83%, 83% 91%, 89% 100%, 0 100%, 0 73%, 11% 66%, 11% 41%, 0% 33%);
+}
+
+.game__cell-type1 {
+    clip-path: polygon(0 0, 65% 0%, 73% 12%, 100% 12%, 100% 100%, 1% 100%, 11% 91%, 11% 57%, 0% 47%);
+}
+
+.game__cell-type2 {
+    clip-path: polygon(0% 0%, 85% 0, 100% 17%, 100% 100%, 32% 100%, 25% 88%, 0% 88%);
+}
+
+.game__cell-type3 {
+    clip-path: polygon(0 14%, 53% 14%, 60% 0, 100% 0%, 100% 22%, 90% 28%, 90% 59%, 100% 64%, 100% 100%, 0 100%);
+}
+
+.game__cell-type4 {
+    clip-path: polygon(0% 0%, 38% 0, 43% 12%, 100% 12%, 100% 100%, 39% 100%, 34% 87%, 0 87%, 0% 63%, 13% 57%, 13% 57%, 13% 10%);
+}

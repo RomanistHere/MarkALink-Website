@@ -3,6 +3,11 @@
     src: url('../fonts/NEON.TTF');
 }
 
+@font-face {
+    font-family: Godsownjunkyard;
+    src: url('../fonts/Godsownjunkyard-Regular.otf');
+}
+
 :root {
     --bg-color: #131313;
     --bg-color-glitch: #080808;
@@ -11,12 +16,18 @@
     --logo-col-2: #FB4264;
     --logo-shadow: #FA1C16;
     --logo-shadow-2: #806914;
+
+    --shadow-col-1: #ff00cb;
+
+    --text-col: #fff;
 }
 
 html, body {
     background-color: var(--bg-color);
     margin: 0;
     padding: 0;
+
+    font-family: Verdana;
 }
 
 .logo__neon {
@@ -213,11 +224,11 @@ html, body {
 }
 
 .logo_section {
-    display: -webkit-flex;
-    display: -ms-flex;
+    position: relative;
+    z-index: 2;
+    
     display: flex;
     justify-content: center;
-    -ms-align-items: center;
     align-items: center;
 
     height: 100vh;
