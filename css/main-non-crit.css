@@ -119,7 +119,7 @@
     --pink-glitch: #8a0273;
     --pink-glitch-dark: #84036e;
     --aqua-glitch: #048282;
-    --green: #296b0e;
+    --green-glitch: #296b0e;
     --brigth-gray: #a29ea1;
     --violet-good: #9e638f;
 
@@ -195,14 +195,6 @@
     }
 }
 
-.anim-1 .game-overlay {
-    animation: gameSectionGlitch 1.5s ease-out;
-}
-
-.anim-1 .game-overlay-1 {
-    animation: gameSectionBg 1.5s ease-out;
-}
-
 @keyframes gameSectionBg {
     13%, 74% {
         opacity: 1;
@@ -211,6 +203,88 @@
     12%, 75% {
         opacity: 0;
     }
+}
+
+@keyframes gameSectionGlitch2 {
+    0%, 32%, 39%, 56%, 68%, 92% {
+        clip-path: polygon(0 0%, 100% 0%, 100% 89%, 0 89%, 0 71%, 100% 72%, 100% 28%, 0 28%);
+        background-color: var(--pink-glitch-dark);
+        opacity: 0;
+        transform: none;
+    }
+    4%, 31%, 40%, 55%, 69%, 91% {
+        opacity: 1;
+    }
+    39%, 56% {
+        background-color: #58037b;
+    }
+    5%, 30% {
+        clip-path: polygon(0 1%, 100% 0%, 100% 77%, 0 77%, 0 74%, 100% 72%, 100% 72%, 0 70%, 0 60%, 100% 59%, 100% 55%, 0 55%, 0 20%, 100% 31%, 100% 15%);
+    }
+    8% {
+        transform: translate(100px, -8px);
+    }
+    10%, 42% {
+        transform: translate(-100px, -20px);
+    }
+    18% {
+        transform: translate(-100px, -20px);
+    }
+    20% {
+        transform: translate(-50px, -40px);
+    }
+    26%, 46% {
+        transform: translate(-50px, -20px);
+    }
+    28% {
+        transform: translate(100px, -50px);
+    }
+    50% {
+        transform: translate(90px, 50px);
+    }
+    53% {
+        transform: translate(100px, 70px);
+    }
+    70%, 90% {
+        clip-path: polygon(0% 5%, 100% 7%, 100% 95%, 0% 97%, 0% 80%, 100% 80%, 100% 65%, 0% 63%, 0% 32%, 100% 34%, 100% 20%, 0% 16%);
+        transform: translate(10px, -8px);
+        background-color: var(--logo-col);
+    }
+    75% {
+        transform: translate(20px, -7px);
+    }
+    80% {
+        transform: translate(-20px, -10px);
+    }
+    85% {
+        transform: translate(10px, -7px);
+    }
+}
+
+@keyframes gameSectionBg2 {
+    5%, 85% {
+        opacity: 1;
+        background-color: var(--violet-glitch);
+    }
+    4%, 86% {
+        opacity: 0;
+    }
+}
+
+.anim-1 .game-overlay {
+    animation: gameSectionGlitch 1.5s ease-out;
+}
+
+.anim-1 .game-overlay-1 {
+    animation: gameSectionBg 1.5s ease-out;
+}
+
+.anim-2 .game-overlay {
+    animation: gameSectionGlitch2 2s step-end;
+}
+
+.anim-2 .game-overlay-1 {
+    animation: gameSectionBg2 2s step-end;
 }
 
 .game__field {
@@ -225,6 +299,7 @@
 
     filter: drop-shadow(0 0 10px var(--bg-color));
     transition: var(--def-trs);
+    cursor: pointer;
 }
 
 .game__cell_wrap:hover,
@@ -250,8 +325,19 @@
     background-color: var(--aqua-glitch);
 }
 
-.game__cell-wrong {
+.game__cell_wrap-wrong .game__cell,
+.game__cell_wrap-wrong:hover .game__cell {
     background-color: var(--logo-shadow);
+}
+
+.game__cell_wrap-right .game__cell,
+.game__cell_wrap-right:hover .game__cell {
+    background-color: var(--green-glitch);
+}
+
+.game__cell_wrap-hide .game__cell,
+.game__cell_wrap-hide:hover .game__cell {
+    opacity: .1;
 }
 
 .game__cell-type1 {
@@ -268,4 +354,20 @@
 
 .game__cell-type4 {
     clip-path: polygon(0% 0%, 38% 0, 43% 12%, 100% 12%, 100% 100%, 39% 100%, 34% 87%, 0 87%, 0% 63%, 13% 57%, 13% 57%, 13% 10%);
+}
+
+/* // //  */
+
+.gameTyping {
+    animation: animatedCursor 1.5s steps(29,end) infinite;
+    border-right: solid 6px var(--bg-color);
+}
+
+@keyframes animatedCursor {
+    0%, 30%, 70%, 100% {
+        border-right-color: var(--bg-color);
+    }
+    50% {
+        border-right-color: transparent;
+    }
 }
