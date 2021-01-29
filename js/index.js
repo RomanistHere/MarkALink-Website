@@ -148,11 +148,11 @@ const initTyping = (elem, txt) => {
 
 const initPassiveInteractive = () => {
     initTyping(gameTyping, 'Find a good cell.')
-    
+
     setInterval(() => {
         if (state.gameTypingTimeout)
             return
-        initTyping(gameTyping, 'Find a good cell.')
+        initTyping(gameTyping, state.isGameFinished ? 'Download MarkALink!' : 'Find a good cell.')
     }, 20000)
 
     setInterval(() => {
