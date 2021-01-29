@@ -195,11 +195,11 @@
     }
 }
 
-.game__field:hover + .game-overlay-1 + .game-overlay {
+.anim-1 .game-overlay {
     animation: gameSectionGlitch 1.5s ease-out;
 }
 
-.game__field:hover + .game-overlay-1 {
+.anim-1 .game-overlay-1 {
     animation: gameSectionBg 1.5s ease-out;
 }
 
@@ -224,6 +224,12 @@
     display: inline-block;
 
     filter: drop-shadow(0 0 10px var(--bg-color));
+    transition: var(--def-trs);
+}
+
+.game__cell_wrap:hover,
+.game__cell_wrap-hover {
+    filter: drop-shadow(0 0 22px var(--bg-color));
 }
 
 .game__cell {
@@ -233,9 +239,19 @@
     height: 100px;
     margin: 24px;
 
-    background: var(--violet-good);
+    background-color: var(--violet-good);
+    transition: background-color .2s ease;
 
     clip-path: polygon(0% 0%, 12% 14%, 65% 14%, 76% 0, 100% 0%, 100% 83%, 83% 91%, 89% 100%, 0 100%, 0 73%, 11% 66%, 11% 41%, 0% 33%);
+}
+
+.game__cell_wrap:hover .game__cell,
+.game__cell_wrap-hover .game__cell {
+    background-color: var(--aqua-glitch);
+}
+
+.game__cell-wrong {
+    background-color: var(--logo-shadow);
 }
 
 .game__cell-type1 {
