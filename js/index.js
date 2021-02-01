@@ -13,6 +13,7 @@ let state = {
     winDataIndex: Math.floor(Math.random() * 10) + 1,
     isGameFinished: false,
     gameTypingTimeout: null,
+    aboutTypingTimeout: null,
 }
 let gameTimer = null
 const gameToggleBtn = $('.gameToggleBtn')
@@ -20,6 +21,7 @@ const gameSection = $('.game-unique')
 const toggleText = $All('.glitch_base')
 const gameCellsUniq = $All('.game__field-unique .game__cell_wrap')
 const gameTyping = $All('.gameTyping')
+const aboutTyping = $All('.aboutTyping')
 
 const handleGameToggleClick = () => {
     const toggleNewText = state.markALinkTogglerText ? 'OFF' : 'ON'
@@ -82,13 +84,13 @@ const rightAnswer = dataIndex => {
         elem.classList.add('game__cell_wrap-right')
     })
     state = { ...state, isGameFinished: true }
-    initTyping(gameTyping, 'Success!')
+    initTyping(gameTyping, 'Success!', 'gameTypingTimeout')
     toggleGameField(false)
 }
 
 const wrongAnswer = dataIndex => {
     const gameCells = $All(`.game__cell_wrap[data-index="${dataIndex}"]`)
-    initTyping(gameTyping, 'Wrooooong!')
+    initTyping(gameTyping, 'Wrooooong!', 'gameTypingTimeout')
     gameCells.forEach(elem => {
         elem.classList.add('game__cell_wrap-wrong')
         setTimeout(() => {
@@ -118,7 +120,7 @@ const initGame = () => {
 
 initGame()
 
-const initTyping = (elem, txt) => {
+const initTyping = (elem, txt, timeoutRef) => {
     const speed = 100
     let i = 0
 
@@ -129,17 +131,17 @@ const initTyping = (elem, txt) => {
             if (txt.charAt(i) == ' ') {
                 typeWriter()
             } else {
-                state = { ...state, gameTypingTimeout: setTimeout(typeWriter, speed) }
+                state = { ...state, [timeoutRef]: setTimeout(typeWriter, speed) }
             }
         } else {
-            clearTimeout(state.gameTypingTimeout)
-            state = { ...state, gameTypingTimeout: null }
+            clearTimeout(state[timeoutRef])
+            state = { ...state, [timeoutRef]: null }
         }
     }
 
-    if (state.gameTypingTimeout) {
-        clearTimeout(state.gameTypingTimeout)
-        state = { ...state, gameTypingTimeout: null }
+    if (state[timeoutRef]) {
+        clearTimeout(state[timeoutRef])
+        state = { ...state, [timeoutRef]: null }
     }
 
     elem.forEach(item => item.textContent = '')
@@ -147,12 +149,12 @@ const initTyping = (elem, txt) => {
 }
 
 const initPassiveInteractive = () => {
-    initTyping(gameTyping, 'Find a good cell.')
+    initTyping(gameTyping, 'Find a good cell.', 'gameTypingTimeout')
 
     setInterval(() => {
         if (state.gameTypingTimeout)
             return
-        initTyping(gameTyping, state.isGameFinished ? 'Download MarkALink!' : 'Find a good cell.')
+        initTyping(gameTyping, state.isGameFinished ? 'Download MarkALink!' : 'Find a good cell.', 'gameTypingTimeout')
     }, 20000)
 
     setInterval(() => {
@@ -163,6 +165,8 @@ const initPassiveInteractive = () => {
         gameSection.classList.add(animClass)
         state = { ...state, gameAnimDelay: true }
     }, 30000)
+
+    initTyping(aboutTyping, 'So, what is it all about?', 'aboutTypingTimeout')
 }
 
 initPassiveInteractive()
