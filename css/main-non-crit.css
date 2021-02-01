@@ -461,35 +461,37 @@
     z-index: 1;
 }
 
-.glitch_hover_text:before,
-.glitch_hover_text:after {
-    content: attr(data-text);
-    position: absolute;
+@media (hover: hover) {
+    .glitch_hover_text:before,
+    .glitch_hover_text:after {
+        content: attr(data-text);
+        position: absolute;
 
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-}
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
 
-.glitch_hover_text:before {
-    color: #00ffff;
+    .glitch_hover_text:before {
+        color: #00ffff;
 
-    z-index: -1;
-}
+        z-index: -1;
+    }
 
-.glitch_hover_text:after {
-    color: #ff00ff;
+    .glitch_hover_text:after {
+        color: #ff00ff;
 
-    z-index: -2;
-}
+        z-index: -2;
+    }
 
-.glitch_hover_text:hover:before {
-    animation: glitchyText 0.3s ease 0.3s infinite;
-}
+    .glitch_hover_text:hover:before {
+        animation: glitchyText 0.3s ease 0.3s infinite;
+    }
 
-.glitch_hover_text:hover:after {
-    animation: glitchyText 0.3s ease infinite reverse;
+    .glitch_hover_text:hover:after {
+        animation: glitchyText 0.3s ease infinite reverse;
+    }
 }
 
 @keyframes glitchyText {
@@ -587,7 +589,6 @@
         width: 100%;
         padding: 0 40px;
 
-        -webkit-box-sizing: border-box;
         box-sizing: border-box;
     }
 }
@@ -629,6 +630,22 @@
 
     .game__field {
         max-width: 400px;
+    }
+
+    .about {
+        padding-top: 50px;
+    }
+
+    .about__wrap {
+        padding: 0 20px;
+    }
+
+    .about__list {
+        padding-left: 30px;
+    }
+
+    .about__text {
+        margin: 0;
     }
 }
 
