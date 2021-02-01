@@ -2,6 +2,15 @@
     --skew-height-1: calc(100vw * 0.06993);
     --def-trs: all ease .3s;
     --neon-trs-1: color ease .3s, text-shadow ease .2s, box-shadow ease .2s;
+
+    --title-fz: 80px;
+    --title-fz-sec: 44px;
+
+    --game-width: 800px;
+    --cell-side: 100px;
+    --cell-margin: 24px;
+
+    -webkit-tap-highlight-color: transparent;
 }
 
 *::selection {
@@ -29,7 +38,7 @@
     margin: 0;
 
     text-align: center;
-    font-size: 80px;
+    font-size: var(--title-fz);
 
     text-shadow:
         0 0 10px var(--color1),
@@ -50,7 +59,7 @@
     display: inline-block;
     padding: 0;
 
-    font-size: 44px;
+    font-size: var(--title-fz-sec);
 }
 
 .glitch_wrap {
@@ -124,6 +133,11 @@
     --violet-good: #9e638f;
 
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
 
     text-align: center;
     overflow: hidden;
@@ -289,7 +303,7 @@
 
 .game__field {
     margin: 80px auto 150px;
-    width: 800px;
+    width: var(--game-width);
 }
 
 /* // cells // */
@@ -300,29 +314,6 @@
     filter: drop-shadow(0 0 10px var(--bg-color));
     transition: var(--def-trs);
     cursor: pointer;
-}
-
-.game__cell_wrap:hover,
-.game__cell_wrap-hover {
-    filter: drop-shadow(0 0 22px var(--bg-color));
-}
-
-.game__cell {
-    display: inline-block;
-
-    width: 100px;
-    height: 100px;
-    margin: 24px;
-
-    background-color: var(--violet-good);
-    transition: background-color .2s ease;
-
-    clip-path: polygon(0% 0%, 12% 14%, 65% 14%, 76% 0, 100% 0%, 100% 83%, 83% 91%, 89% 100%, 0 100%, 0 73%, 11% 66%, 11% 41%, 0% 33%);
-}
-
-.game__cell_wrap:hover .game__cell,
-.game__cell_wrap-hover .game__cell {
-    background-color: var(--aqua-glitch);
 }
 
 .game__cell_wrap-wrong .game__cell,
@@ -338,6 +329,19 @@
 .game__cell_wrap-hide .game__cell,
 .game__cell_wrap-hide:hover .game__cell {
     opacity: .1;
+}
+
+.game__cell {
+    display: inline-block;
+
+    width: var(--cell-side);
+    height: var(--cell-side);
+    margin: var(--cell-margin);
+
+    background-color: var(--violet-good);
+    transition: background-color .2s ease;
+
+    clip-path: polygon(0% 0%, 12% 14%, 65% 14%, 76% 0, 100% 0%, 100% 83%, 83% 91%, 89% 100%, 0 100%, 0 73%, 11% 66%, 11% 41%, 0% 33%);
 }
 
 .game__cell-type1 {
@@ -369,5 +373,166 @@
     }
     50% {
         border-right-color: transparent;
+    }
+}
+
+@media (hover: hover) {
+    .game__cell_wrap:hover,
+    .game__cell_wrap-hover {
+        filter: drop-shadow(0 0 22px var(--bg-color));
+    }
+
+    .game__cell_wrap:hover .game__cell,
+    .game__cell_wrap-hover .game__cell {
+        background-color: var(--aqua-glitch);
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    body {
+        width: 100%;
+        max-width: 1920px;
+        padding: 0;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-height: 869px) and (min-width: 1024px) {
+    /* // laptop 1 // */
+    :root {
+        --title-fz: 50px;
+        --title-fz-sec: 28px;
+
+        --game-width: 700px;
+        --cell-side: 80px;
+        --cell-margin: 20px;
+    }
+
+    .game__field {
+        margin: 40px auto 100px;
+    }
+}
+
+@media screen and (max-height: 670px) and (min-width: 1024px) {
+    /* // laptop 2 // */
+    :root {
+        --title-fz: 46px;
+        --title-fz-sec: 24px;
+
+        --game-width: 500px;
+        --cell-side: 60px;
+        --cell-margin: 16px;
+    }
+
+    .game__field {
+        margin: 40px auto 100px;
+    }
+
+    .title {
+        padding-bottom: 30px;
+    }
+
+    .game__title {
+        padding: 14px;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    /* // tablets // */
+    :root {
+        --title-fz: 50px;
+        --title-fz-sec: 28px;
+
+        --game-width: 700px;
+        --cell-side: 80px;
+        --cell-margin: 20px;
+    }
+
+    .game__field {
+        margin: 40px auto 100px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    /* // phones 1 // */
+    :root {
+        --title-fz: 28px;
+        --title-fz-sec: 20px;
+
+        --game-width: 100%;
+        --cell-side: 60px;
+        --cell-margin: 20px;
+    }
+
+    .logo_section {
+        display: block;
+    }
+
+    .logo_wrap {
+        transform: scale(0.5) translate(-50%, -50%);
+        transform-origin: left top;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+    }
+
+    .game__field {
+        margin: 30px auto 10px;
+    }
+
+    .title {
+        padding-bottom: 30px;
+    }
+
+    .game__title {
+        padding: 14px;
+    }
+
+    .game__field {
+        max-width: 400px;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    /* // phones 2 // */
+    :root {
+        --title-fz: 24px;
+        --title-fz-sec: 18px;
+
+        --cell-side: 50px;
+        --cell-margin: 16px;
+    }
+
+    .logo_wrap {
+        transform: scale(0.4) translate(-50%, -50%);
+    }
+
+    .title {
+        padding-bottom: 24px;
+    }
+
+    .game__title {
+        padding: 10px;
+    }
+
+    .game__field {
+        max-width: 340px;
+    }
+}
+
+@media screen and (max-height: 500px) and (max-width: 1024px) {
+    /* // phones album //  */
+    :root {
+        --cell-side: 50px;
+        --cell-margin: 18px;
+    }
+
+    .game {
+        min-height: 450px;
+    }
+
+    .game__field {
+        max-width: 500px;
+        margin-bottom: 60px;
     }
 }
