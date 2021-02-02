@@ -887,6 +887,12 @@
     .game__title {
         padding: 14px;
     }
+
+    .finale__skewed {
+        padding: 10px 15px;
+
+        font-size: 16px;
+    }
 }
 
 @media screen and (max-width: 1023px) {
@@ -915,6 +921,16 @@
         max-width: 660px;
 
         box-sizing: border-box;
+    }
+
+    .finale__skewed {
+        padding: 10px 20px;
+
+        font-size: 16px;
+    }
+
+    .no_tablet {
+        display: none;
     }
 }
 
@@ -977,6 +993,15 @@
     .plans__title {
         padding: calc(var(--skew-height-1) - 20px) 0 30px;
     }
+
+    .no_mobile {
+        display: none;
+    }
+
+    .finale__skewed {
+        text-align: right;
+        font-size: 14px;
+    }
 }
 
 @media screen and (max-width: 340px) {
@@ -1005,6 +1030,10 @@
 
     .game__field {
         max-width: 340px;
+    }
+
+    .finale__skewed {
+        padding: 5px;
     }
 }
 
