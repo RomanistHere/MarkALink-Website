@@ -6,6 +6,7 @@
     --title-fz: 80px;
     --title-fz-sec: 44px;
     --text-fz: 22px;
+    --text-lh: 37px;
 
     --game-width: 800px;
     --cell-side: 100px;
@@ -457,7 +458,7 @@
     padding-bottom: 80px;
 
     font-size: var(--text-fz);
-    line-height: 37px;
+    line-height: var(--text-lh);
 }
 
 .about__highlight {
@@ -478,6 +479,10 @@
     text-shadow: 0 5px 10px var(--pink-glitch-dark);
 }
 
+.about__list {
+    padding-left: 36px;
+}
+
 .about__item {
     padding: 0;
     margin: 0;
@@ -493,36 +498,36 @@
     z-index: 1;
 }
 
+.glitch_hover_text-pseudo {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+.glitch_hover_text-highlight {
+    font-weight: normal;
+    transition: text-shadow .1s ease;
+}
+
+.glitch_hover_text-before {
+    color: #00ffff;
+
+    z-index: -1;
+}
+
+.glitch_hover_text-after {
+    color: #ff00ff;
+
+    z-index: -2;
+}
+
 @media (hover: hover) {
-    .glitch_hover_text-pseudo {
-        position: absolute;
-
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-
-        will-change: transform;
-        transform: translateZ(0);
-    }
-
-    .glitch_hover_text-before {
-        color: #00ffff;
-
-        z-index: -1;
-    }
-
-    .glitch_hover_text-after {
-        color: #ff00ff;
-
-        z-index: -2;
-    }
-
-    .glitch_hover_text-highlight {
-        font-weight: normal;
-        transition: text-shadow .1s ease;
-    }
-
     .glitch_hover_text:hover .glitch_hover_text-highlight {
         text-shadow: 2px -2px 2px var(--logo-col);
     }
@@ -559,7 +564,7 @@
     }
 
     .about__link:hover::after {
-        animation: btnGlitch2 4s step-start infinite;
+        animation: btnGlitch2 3s step-start infinite;
         clip-path: polygon(0% 5%, 100% 7%, 100% 95%, 0% 97%, 0% 80%, 100% 80%, 100% 65%, 0% 63%, 0% 32%, 100% 34%, 100% 20%, 0% 16%);
     }
 }
@@ -809,6 +814,7 @@
         --title-fz: 50px;
         --title-fz-sec: 28px;
         --text-fz: 20px;
+        --text-lh: 32px;
 
         --game-width: 700px;
         --cell-side: 80px;
@@ -820,7 +826,27 @@
     }
 
     .about__wrap {
-        width: 600px;
+        width: 580px;
+    }
+
+    .logo_wrap {
+        transform: none;
+    }
+
+    .about__list {
+        padding-left: 32px;
+    }
+
+    .plans {
+        height: auto;
+    }
+
+    .plans__title {
+        padding: calc(var(--skew-height-1) - 20px) 0 50px;
+    }
+
+    .plans__text_wrap {
+        padding-bottom: 80px;
     }
 }
 
@@ -829,19 +855,33 @@
     :root {
         --title-fz: 46px;
         --title-fz-sec: 24px;
-        --text-fz: 18px
+        --text-fz: 16px;
+        --text-lh: 27px;
 
         --game-width: 500px;
         --cell-side: 60px;
         --cell-margin: 16px;
     }
 
+    .logo_wrap {
+        transform: scale(.77);
+    }
+
     .game__field {
         margin: 40px auto 100px;
     }
 
+    .about__wrap {
+        width: 450px;
+    }
+
     .title {
         padding-bottom: 30px;
+    }
+
+    .game,
+    .logo_section {
+        min-height: 550px;
     }
 
     .game__title {
@@ -861,13 +901,18 @@
         --cell-margin: 20px;
     }
 
+    .logo_wrap {
+        transform: none;
+    }
+
     .game__field {
         margin: 40px auto 100px;
     }
 
     .about__wrap {
         width: 100%;
-        padding: 0 40px;
+        padding: 0 40px 30px;
+        max-width: 660px;
 
         box-sizing: border-box;
     }
@@ -917,11 +962,20 @@
     }
 
     .about__wrap {
-        padding: 0 20px;
+        padding: 0 20px 20px;
     }
 
     .about__list {
         padding-left: 30px;
+    }
+
+    .plans {
+        display: block;
+        height: auto;
+    }
+
+    .plans__title {
+        padding: calc(var(--skew-height-1) - 20px) 0 30px;
     }
 }
 
@@ -931,6 +985,7 @@
         --title-fz: 24px;
         --title-fz-sec: 18px;
         --text-fz: 16px;
+        --text-lh: 30px;
 
         --cell-side: 50px;
         --cell-margin: 16px;
@@ -951,10 +1006,6 @@
     .game__field {
         max-width: 340px;
     }
-
-    .about__wrap {
-        line-height: 30px;
-    }
 }
 
 @media screen and (max-height: 500px) and (max-width: 1024px) {
@@ -964,12 +1015,20 @@
         --cell-margin: 18px;
     }
 
+    .logo_wrap {
+        transform: scale(.5);
+    }
+
     .game {
-        min-height: 450px;
+        min-height: 550px;
     }
 
     .game__field {
         max-width: 500px;
         margin-bottom: 60px;
+    }
+
+    .plans {
+        height: auto;
     }
 }
