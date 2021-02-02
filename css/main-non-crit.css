@@ -614,9 +614,13 @@
 .finale__skewed {
     height: calc(var(--skew-height-1) * 2);
     top: 0;
-    padding: 20px 50px;
+    padding: 20px 40px;
 
     box-sizing: border-box;
+}
+
+.finale__link {
+    color: var(--bg-color);
 }
 
 .skewed-first {
@@ -625,6 +629,7 @@
 
 .skewed-second {
     background-color: var(--logo-col);
+
     transform: skewY(-4deg);
     transform-origin: top left;
 }
