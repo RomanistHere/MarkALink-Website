@@ -69,6 +69,7 @@ html, body {
 
     width: 584px;
     height: 272px;
+    transform: scale(1.25);
 
     background-color: var(--bg-color);
 
@@ -226,7 +227,7 @@ html, body {
 .logo_section {
     position: relative;
     z-index: 2;
-    
+
     display: flex;
     justify-content: center;
     align-items: center;
