@@ -6,6 +6,28 @@ const handleClickPrev = (elem, func) => {
         func(e)
     })
 }
+const customScrollTo = (to, duration) => {
+    const start = 0
+    const change = to - start
+    let currentTime = 0
+    const increment = 20
+
+    const animateScroll = () => {
+        currentTime += increment
+        const val = easeInOutQuad(currentTime, start, change, duration)
+        window.scrollTo(0, val)
+
+        if (currentTime < duration)
+            setTimeout(animateScroll, increment)
+    }
+    animateScroll()
+}
+const easeInOutQuad = (t, b, c, d) => {
+    t /= d/2;
+    if (t < 1) return c/2*t*t + b;
+    t--;
+    return -c/2 * (t*(t-2) - 1) + b;
+}
 
 let state = {
     gameAnimDelay: false,
@@ -148,7 +170,34 @@ const initTyping = (elem, txt, timeoutRef) => {
     typeWriter()
 }
 
+const animateOnStart = () => {
+    const scrollToString = window.location.hash.substr(1)
+    if (!scrollToString)
+        return
+    const scrollToElem = $(`.${scrollToString}`)
+    if (!scrollToElem)
+        return
+
+    const scrollToDist = scrollToElem.getBoundingClientRect().top
+    customScrollTo(scrollToDist, Math.floor(scrollToDist / 2))
+
+    setTimeout(() => {
+        animateGlitch()
+    }, 500)
+}
+
+const animateGlitch = () => {
+    if (state.gameAnimDelay)
+        return
+
+    const animClass = Math.random() < 0.5 ? 'anim-1' : 'anim-2'
+    gameSection.classList.add(animClass)
+    state = { ...state, gameAnimDelay: true }
+}
+
 const initPassiveInteractive = () => {
+    animateOnStart()
+
     initTyping(gameTyping, 'Find a good cell.', 'gameTypingTimeout')
 
     setInterval(() => {
@@ -158,15 +207,14 @@ const initPassiveInteractive = () => {
     }, 20000)
 
     setInterval(() => {
-        if (state.gameAnimDelay)
-            return
-
-        const animClass = Math.random() < 0.5 ? 'anim-1' : 'anim-2'
-        gameSection.classList.add(animClass)
-        state = { ...state, gameAnimDelay: true }
+        animateGlitch()
     }, 30000)
 
-    initTyping(aboutTyping, 'So, what is it all about?', 'aboutTypingTimeout')
+    // initTyping(aboutTyping, 'So, what is it all about?', 'aboutTypingTimeout')
 }
 
-initPassiveInteractive()
+
+
+window.addEventListener("load", () => {
+    initPassiveInteractive()
+}, false)
