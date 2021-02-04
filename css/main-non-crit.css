@@ -1,6 +1,5 @@
 :root {
     --skew-height-1: calc(100vw * 0.06993);
-    --def-trs: all ease .3s;
     --neon-trs-1: color ease .3s, text-shadow ease .2s, box-shadow ease .2s;
 
     --title-fz: 80px;
@@ -354,7 +353,7 @@
     display: inline-block;
 
     filter: drop-shadow(0 0 10px var(--bg-color));
-    transition: var(--def-trs);
+    transition: opacity ease .3s, filter ease .3s, background-color ease .3s;
     cursor: pointer;
 }
 
