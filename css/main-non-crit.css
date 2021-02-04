@@ -531,16 +531,70 @@
 }
 
 @media (hover: hover) {
+    .glitch_hover_text-pseudo {
+        display: inline;
+    }
+
+    .section_to_animate-animated .glitch_hover_text:nth-child(4) .glitch_hover_text-before {
+        animation: glitchyTextLong .7s ease .3s;
+    }
+
+    .section_to_animate-animated .glitch_hover_text:nth-child(4) .glitch_hover_text-after {
+        animation: glitchyTextLong .7s ease reverse;
+    }
+
+    .section_to_animate-animated .glitch_hover_text:nth-child(3) .glitch_hover_text-before {
+        animation: glitchyTextLong .7s ease .8s;
+    }
+
+    .section_to_animate-animated .glitch_hover_text:nth-child(3) .glitch_hover_text-after {
+        animation: glitchyTextLong .7s ease .5s reverse;
+    }
+
+    .section_to_animate-animated .glitch_hover_text:nth-child(2) .glitch_hover_text-before {
+        animation: glitchyTextLong .7s ease 1.4s;
+    }
+
+    .section_to_animate-animated .glitch_hover_text:nth-child(2) .glitch_hover_text-after {
+        animation: glitchyTextLong .7s ease 1.2s reverse;
+    }
+
+    .section_to_animate-animated .glitch_hover_text:nth-child(1) .glitch_hover_text-before {
+        animation: glitchyTextLong .7s ease 2s;
+    }
+
+    .section_to_animate-animated .glitch_hover_text:nth-child(1) .glitch_hover_text-after {
+        animation: glitchyTextLong .7s ease 1.7s reverse;
+    }
+
+    @keyframes glitchyTextLong {
+        0%   {
+            transform: translate(-2px, 3px) translateZ(0);
+        }
+        12.5%, 62.5%  {
+            transform: translate(-3px, -2px) translateZ(0);
+        }
+        25%, 75%  {
+            transform: translate(2px, 3px) translateZ(0);
+        }
+        37.5%, 87.5%  {
+            transform: translate(3px, -2px) translateZ(0);
+        }
+        50%, 100%  {
+            transform: translate(-2px, 3px) translateZ(0);
+        }
+    }
+
     .glitch_hover_text:hover .glitch_hover_text-highlight {
         text-shadow: 2px -2px 2px var(--logo-col);
     }
 
     .glitch_hover_text:hover .glitch_hover_text-before {
-        animation: glitchyText 0.3s ease 0.3s infinite;
+        animation: glitchyText .3s ease .3s infinite;
     }
 
     .glitch_hover_text:hover .glitch_hover_text-after {
-        animation: glitchyText 0.3s ease infinite reverse;
+        animation: glitchyText .3s ease infinite reverse;
     }
 
     .about__link::after,

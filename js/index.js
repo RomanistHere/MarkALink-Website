@@ -210,8 +210,12 @@ const makeGameGlitchAvail = () => {
     }
 }
 
-const animateTextGlitch = () => {
+const animateTextGlitch = section => {
+    section.classList.add('section_to_animate-animated')
 
+    setTimeout(() => {
+        section.classList.remove('section_to_animate-animated')
+    }, 2500)
 }
 
 const animateSection = section => {
@@ -228,7 +232,7 @@ const animateSection = section => {
     if (section.classList.contains('game')) {
         setTimeout(animateGameGlitch, 500)
     } else if (section.classList.contains('about')) {
-        setTimeout(animateTextGlitch, 500)
+        setTimeout(() => { animateTextGlitch(section) }, 500)
     }
 }
 
