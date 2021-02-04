@@ -201,25 +201,46 @@ const animateGlitch = () => {
     state = { ...state, gameAnimDelay: true }
 }
 
+const animateSection = section => {
+    const typing = section.querySelector('.typing')
+
+    if (typing) {
+        const timeoutRef = typing.getAttribute('data-ref')
+        const text = typing.getAttribute('data-text')
+        
+        initTyping([typing], text, timeoutRef, state.shouldRetype)
+    }
+}
+
+const deAnimateSection = section => {
+    const typing = section.querySelector('.typing')
+
+    if (typing) {
+        const timeoutRef = typing.getAttribute('data-ref')
+        const text = typing.getAttribute('data-text')
+
+        typing.textContent = text
+        clearTimeout(state[timeoutRef])
+        state = { ...state, [timeoutRef]: setTimeout(() => { state = { ...state, [timeoutRef]: null } }, 3000) }
+    }
+}
+
 const animateOnScroll = () => {
     const animationObserver = new IntersectionObserver((entries, observer) => {
         for (const entry of entries) {
             const isAppearing = entry.isIntersecting
             const elem = entry.target
-            const timeoutRef = elem.getAttribute('data-ref')
-            const text = elem.getAttribute('data-text')
+            // const timeoutRef = elem.getAttribute('data-ref')
 
             if (isAppearing) {
-                initTyping([elem], text, timeoutRef, state.shouldRetype)
+                animateSection(elem)
             } else {
-                elem.textContent = text
-                clearTimeout(state[timeoutRef])
-                state = { ...state, [timeoutRef]: setTimeout(() => { state = { ...state, [timeoutRef]: null } }, 3000) }
+                deAnimateSection(elem)
             }
         }
     })
 
-    for (const element of $All('.typing')) {
+    for (const element of $All('.section_to_animate')) {
         animationObserver.observe(element)
     }
 }
