@@ -30,6 +30,10 @@
     background: var(--shadow-col-1);
 }
 
+.section_to_animate {
+    height: auto;
+}
+
 .skewed {
     position: absolute;
     z-index: 1;

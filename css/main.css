@@ -30,6 +30,10 @@ html, body {
     font-family: Verdana;
 }
 
+.section_to_animate {
+    height: 100vh;
+}
+
 .logo__neon {
     position: relative;
     display: block;
