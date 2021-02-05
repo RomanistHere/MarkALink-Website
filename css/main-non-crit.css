@@ -535,36 +535,36 @@
         display: inline;
     }
 
-    .section_to_animate-animated .glitch_hover_text:nth-child(4) .glitch_hover_text-before {
+    .section_to_animate-animated .about__list .glitch_hover_text:nth-child(4) .glitch_hover_text-before {
         animation: glitchyTextLong .7s ease .3s;
     }
 
-    .section_to_animate-animated .glitch_hover_text:nth-child(4) .glitch_hover_text-after {
+    .section_to_animate-animated .about__list .glitch_hover_text:nth-child(4) .glitch_hover_text-after {
         animation: glitchyTextLong .7s ease reverse;
     }
 
-    .section_to_animate-animated .glitch_hover_text:nth-child(3) .glitch_hover_text-before {
-        animation: glitchyTextLong .7s ease .8s;
+    .section_to_animate-animated .about__list .glitch_hover_text:nth-child(3) .glitch_hover_text-before {
+        animation: glitchyTextLong .7s ease .7s;
     }
 
-    .section_to_animate-animated .glitch_hover_text:nth-child(3) .glitch_hover_text-after {
-        animation: glitchyTextLong .7s ease .5s reverse;
+    .section_to_animate-animated .about__list .glitch_hover_text:nth-child(3) .glitch_hover_text-after {
+        animation: glitchyTextLong .7s ease .4s reverse;
     }
 
-    .section_to_animate-animated .glitch_hover_text:nth-child(2) .glitch_hover_text-before {
-        animation: glitchyTextLong .7s ease 1.4s;
+    .section_to_animate-animated .about__list .glitch_hover_text:nth-child(2) .glitch_hover_text-before {
+        animation: glitchyTextLong .7s ease 1.2s;
     }
 
-    .section_to_animate-animated .glitch_hover_text:nth-child(2) .glitch_hover_text-after {
-        animation: glitchyTextLong .7s ease 1.2s reverse;
+    .section_to_animate-animated .about__list .glitch_hover_text:nth-child(2) .glitch_hover_text-after {
+        animation: glitchyTextLong .7s ease 1s reverse;
     }
 
-    .section_to_animate-animated .glitch_hover_text:nth-child(1) .glitch_hover_text-before {
-        animation: glitchyTextLong .7s ease 2s;
+    .section_to_animate-animated .about__list .glitch_hover_text:nth-child(1) .glitch_hover_text-before {
+        animation: glitchyTextLong .7s ease 1.7s;
     }
 
-    .section_to_animate-animated .glitch_hover_text:nth-child(1) .glitch_hover_text-after {
-        animation: glitchyTextLong .7s ease 1.7s reverse;
+    .section_to_animate-animated .about__list .glitch_hover_text:nth-child(1) .glitch_hover_text-after {
+        animation: glitchyTextLong .7s ease 1.3s reverse;
     }
 
     @keyframes glitchyTextLong {
@@ -589,11 +589,11 @@
         text-shadow: 2px -2px 2px var(--logo-col);
     }
 
-    .glitch_hover_text:hover .glitch_hover_text-before {
+    .about .about__wrap .glitch_hover_text:hover .glitch_hover_text-before {
         animation: glitchyText .3s ease .3s infinite;
     }
 
-    .glitch_hover_text:hover .glitch_hover_text-after {
+    .about .about__wrap .glitch_hover_text:hover .glitch_hover_text-after {
         animation: glitchyText .3s ease infinite reverse;
     }
 
