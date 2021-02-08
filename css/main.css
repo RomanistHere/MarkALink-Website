@@ -1,11 +1,19 @@
 @font-face {
     font-family: neon;
-    src: url('../fonts/NEON.TTF');
+    src:
+        url('../fonts/NEON.woff2') format('woff2'),
+        url('../fonts/NEON.woff') format('woff'),
+        url('../fonts/NEON.TTF');
+    font-display: swap;
 }
 
 @font-face {
     font-family: Godsownjunkyard;
-    src: url('../fonts/Godsownjunkyard-Regular.otf');
+    src: 
+        url('../fonts/Godsownjunkyard-Regular.woff2') format('woff2'),
+        url('../fonts/Godsownjunkyard-Regular.woff') format('woff'),
+        url('../fonts/Godsownjunkyard-Regular.otf');
+    font-display: swap;
 }
 
 :root {
@@ -166,7 +174,7 @@ html, body {
     clip-path: polygon(0 0%, 100% 0%, 100% 10%, 0 10%);
 }
 
-.logo-shift-2 {
+.logo-shift-3 {
     clip-path: polygon(0 90%, 100% 90%, 100% 100%, 0 100%);
 }
 
