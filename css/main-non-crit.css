@@ -1,6 +1,5 @@
 :root {
     --skew-height-1: calc(100vw * 0.06993);
-    --def-trs: all ease .3s;
     --neon-trs-1: color ease .3s, text-shadow ease .2s, box-shadow ease .2s;
 
     --title-fz: 80px;
@@ -29,6 +28,10 @@
 
 *::selection {
     background: var(--shadow-col-1);
+}
+
+.section_to_animate {
+    height: auto;
 }
 
 .skewed {
@@ -112,7 +115,7 @@
 }
 
 .glitch_text {
-    --color1: red;
+    --color1: #bb0000;
     --color2: #f37070;
     --color3: #ff6464;
     --color4: #ff00cb;
@@ -354,7 +357,7 @@
     display: inline-block;
 
     filter: drop-shadow(0 0 10px var(--bg-color));
-    transition: var(--def-trs);
+    transition: opacity ease .3s, filter ease .3s, background-color ease .3s;
     cursor: pointer;
 }
 
@@ -528,16 +531,70 @@
 }
 
 @media (hover: hover) {
+    .glitch_hover_text-pseudo {
+        display: inline;
+    }
+
+    .section_to_animate-animated .about__list .glitch_hover_text:nth-child(4) .glitch_hover_text-before {
+        animation: glitchyTextLong .7s ease .3s;
+    }
+
+    .section_to_animate-animated .about__list .glitch_hover_text:nth-child(4) .glitch_hover_text-after {
+        animation: glitchyTextLong .7s ease reverse;
+    }
+
+    .section_to_animate-animated .about__list .glitch_hover_text:nth-child(3) .glitch_hover_text-before {
+        animation: glitchyTextLong .7s ease .7s;
+    }
+
+    .section_to_animate-animated .about__list .glitch_hover_text:nth-child(3) .glitch_hover_text-after {
+        animation: glitchyTextLong .7s ease .4s reverse;
+    }
+
+    .section_to_animate-animated .about__list .glitch_hover_text:nth-child(2) .glitch_hover_text-before {
+        animation: glitchyTextLong .7s ease 1.2s;
+    }
+
+    .section_to_animate-animated .about__list .glitch_hover_text:nth-child(2) .glitch_hover_text-after {
+        animation: glitchyTextLong .7s ease 1s reverse;
+    }
+
+    .section_to_animate-animated .about__list .glitch_hover_text:nth-child(1) .glitch_hover_text-before {
+        animation: glitchyTextLong .7s ease 1.7s;
+    }
+
+    .section_to_animate-animated .about__list .glitch_hover_text:nth-child(1) .glitch_hover_text-after {
+        animation: glitchyTextLong .7s ease 1.3s reverse;
+    }
+
+    @keyframes glitchyTextLong {
+        0%   {
+            transform: translate(-2px, 3px) translateZ(0);
+        }
+        12.5%, 62.5%  {
+            transform: translate(-3px, -2px) translateZ(0);
+        }
+        25%, 75%  {
+            transform: translate(2px, 3px) translateZ(0);
+        }
+        37.5%, 87.5%  {
+            transform: translate(3px, -2px) translateZ(0);
+        }
+        50%, 100%  {
+            transform: translate(-2px, 3px) translateZ(0);
+        }
+    }
+
     .glitch_hover_text:hover .glitch_hover_text-highlight {
         text-shadow: 2px -2px 2px var(--logo-col);
     }
 
-    .glitch_hover_text:hover .glitch_hover_text-before {
-        animation: glitchyText 0.3s ease 0.3s infinite;
+    .about .about__wrap .glitch_hover_text:hover .glitch_hover_text-before {
+        animation: glitchyText .3s ease .3s infinite;
     }
 
-    .glitch_hover_text:hover .glitch_hover_text-after {
-        animation: glitchyText 0.3s ease infinite reverse;
+    .about .about__wrap .glitch_hover_text:hover .glitch_hover_text-after {
+        animation: glitchyText .3s ease infinite reverse;
     }
 
     .about__link::after,
@@ -599,7 +656,7 @@
     justify-content: center;
     align-items: center;
 
-    background-color: #86e5ef;
+    /* background-color: #86e5ef; */
     background-color: var(--blue-bright);
 
     color: var(--bg-color);
@@ -887,6 +944,12 @@
     .game__title {
         padding: 14px;
     }
+
+    .finale__skewed {
+        padding: 10px 15px;
+
+        font-size: 16px;
+    }
 }
 
 @media screen and (max-width: 1023px) {
@@ -916,6 +979,16 @@
 
         box-sizing: border-box;
     }
+
+    .finale__skewed {
+        padding: 10px 20px;
+
+        font-size: 16px;
+    }
+
+    .no_tablet {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -941,10 +1014,6 @@
         left: 50%;
     }
 
-    .game__field {
-        margin: 30px auto 10px;
-    }
-
     .title {
         padding-bottom: 30px;
     }
@@ -954,6 +1023,7 @@
     }
 
     .game__field {
+        margin: 30px auto 10px;
         max-width: 400px;
     }
 
@@ -976,6 +1046,15 @@
 
     .plans__title {
         padding: calc(var(--skew-height-1) - 20px) 0 30px;
+    }
+
+    .no_mobile {
+        display: none;
+    }
+
+    .finale__skewed {
+        text-align: right;
+        font-size: 14px;
     }
 }
 
@@ -1005,6 +1084,10 @@
 
     .game__field {
         max-width: 340px;
+    }
+
+    .finale__skewed {
+        padding: 5px;
     }
 }
 

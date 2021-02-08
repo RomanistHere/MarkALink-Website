@@ -3,28 +3,41 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="Description" content="Non-comercial and open-source cyberpunk browser extension. Bookmark experience from the future. Make links visible! Block other ones or search results from being ever shown on the page if you like!">
+	<meta name="Description" content="Non-commercial and open-source cyberpunk browser extension by Romanisthere. Bookmark experience from the future. Prevent search results you didn't like from being ever shown in the web! Make other links visible!">
+	<meta name="keywords" content="Cyberpunk, Non-commerical, Open-source, Roman Smunyov, RomanistHere, PopUpoff, independent, MarkALink, private notes, link notes, notes">
 
 	<meta property="og:title" content="MarkALink" />
 	<meta property="og:type" content="product" />
 	<meta property="og:image" content="images/920x680png.png" />
-	<meta property="og:url" content="https://romanisthere.github.io/MarkALink-Website/" />
-	<meta property="og:description" content="Non-comercial and open-source cyberpunk browser extension. Bookmark experience from the future. Make links visible! Block other ones or search results from being ever shown on the page if you like!"/>
+	<meta property="og:url" content="https://marka.link" />
+	<meta property="og:description" content="Non-commercial and open-source extension by Romanisthere. Prevent search results you didn't like from being ever shown in the web! Make the links you want always visible!"/>
+
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content="https://marka.link/images/920x680png.png" />
+	<meta name="twitter:image:src" content="https://marka.link/images/920x680png.png" />
 
 	<link rel="shortcut icon" type="image/png" href="logo32.png"/>
+
+	<link rel="preload" href="fonts/NEON.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="fonts/Godsownjunkyard-Regular.woff2" as="font" type="font/woff2" crossorigin>
 
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/main-non-crit.css" media="print" onload="this.media='all'">
 
 	<script defer src="js/index.js"></script>
+<<<<<<< HEAD
 	<script async defer data-domain="romanisthere.github.io/posts" src="https://plausible.io/js/plausible.js"></script>
+=======
+
+	<script async defer data-domain="marka.link" src="https://plausible.io/js/plausible.js"></script>
+>>>>>>> develop
 
 	<title>MarkALink</title>
 </head>
 <body>
 	<noscript>You are going to miss some good party without JavaScript here. The website is open-source, I ain't trying to hurt your comuter in any way or track you. In fact, I'm one of the guys who stands for privacy. </br></br> Source: https://github.com/RomanistHere/MarkALink-Website</br></br></noscript>
 
-	<div class="logo_section">
+	<header class="logo_section">
 	    <section class="logo_wrap">
 	        <div class="logo logo-based">
 	            <span class="logo__neon">Mark</span>
@@ -67,19 +80,19 @@
 	    </section>
 
 		<div class="skewed skewed-bottom_right"></div>
-	</div>
+	</header>
 
-	<section class="game game-unique">
+	<section class="game section1 game-unique section_to_animate">
 		<div class="game_wrap">
 			<h1 class="title title-black">
-				<span class="gameTyping title__typing">Find a good cell.</span>
+				<span class="gameTyping title__typing typing" data-ref="gameRef" data-text="Find a good cell.">Find a good cell.</span>
 			</h1>
-			<h3 class="title title-black game__title neon_border">
+			<h2 class="title title-black game__title neon_border">
 				MarkALink:
 				<div class="glitch_wrap">
 					<a href="#" class="glitch_base glitch_text gameToggleBtn">OFF</a>
 				</div>
-			</h3>
+			</h2>
 			<div class="game__field game__field-unique">
 				<div data-index="1" class="game__cell_wrap">
 					<div class="game__cell">
@@ -136,14 +149,14 @@
 			<section class="game game-overlay game-overlay-1">
 				<div class="game_wrap">
 					<h1 class="title title-black">
-						<span class="gameTyping title__typing">Find a good cell.</span>
+						<span class="gameTyping title__typing typing" data-ref="gameRef" data-text="Find a good cell.">Find a good cell.</span>
 					</h1>
-					<h3 class="title title-black game__title neon_border">
+					<h2 class="title title-black game__title neon_border">
 						MarkALink:
 						<div class="glitch_wrap">
 							<a href="#" class="glitch_base glitch_text">OFF</a>
 						</div>
-					</h3>
+					</h2>
 					<div class="game__field">
 						<div data-index="1" class="game__cell_wrap">
 							<div class="game__cell">
@@ -201,14 +214,14 @@
 			<section class="game game-overlay">
 				<div class="game_wrap">
 					<h1 class="title title-black">
-						<span class="gameTyping title__typing">Find a good cell.</span>
+						<span class="gameTyping title__typing typing" data-ref="gameRef" data-text="Find a good cell.">Find a good cell.</span>
 					</h1>
-					<h3 class="title title-black game__title neon_border">
+					<h2 class="title title-black game__title neon_border">
 						MarkALink:
 						<div class="glitch_wrap">
 							<a href="#" class="glitch_base glitch_text">OFF</a>
 						</div>
-					</h3>
+					</h2>
 					<div class="game__field">
 						<div data-index="1" class="game__cell_wrap">
 							<div class="game__cell">
@@ -268,9 +281,9 @@
 		<div class="skewed"></div>
 	</section>
 
-	<section class="about">
+	<section class="about section2 section_to_animate">
 		<h1 class="title title-yellow">
-			<span class="aboutTyping title__typing">So, what is it all about?</span>
+			<span class="aboutTyping title__typing typing" data-ref="aboutRef" data-text="So, what is it all about?">So, what is it all about?</span>
 		</h1>
 		<div class="about__wrap">
 			<p class="about__text glitch_hover_text">
@@ -287,14 +300,14 @@
 			<ul class="about__list">
 				<li class="about__item glitch_hover_text">
 					<span class="glitch_hover_text-before glitch_hover_text-pseudo">
-						No secrets. Does <strong class="glitch_hover_text-highlight">Google track you</strong>r bookmarks through Chrome? I don't know, but here you can learn how MarkALink works. Contribute? Go ahead!
+						No secrets. Does <strong class="glitch_hover_text-highlight">Google track you</strong>r bookmarks through Chrome? I don't know, but you can learn how MarkALink works in GitHub. It's open-source. <strong class="glitch_hover_text-highlight">Contribute</strong>? Go ahead!
 					</span>
 					<span>
 						<strong class="about__highlight">No secrets.</strong>
-						<span>Does Google track your bookmarks through Chrome? <a href="https://deletegoogle.com/#privacyForSale" class="link about__link" target="_blank" rel="noreferrer" data-text="I don't know">I don't know</a>, but <a href="https://github.com/RomanistHere/MarkALink" class="link about__link" target="_blank" rel="noreferrer" data-text="here">here</a> you can learn how MarkALink works. Contribute? Go ahead!</span>
+						<span>Does Google track your bookmarks through Chrome? <a href="https://deletegoogle.com/#privacyForSale" class="link about__link" target="_blank" rel="noreferrer" data-text="I don't know">I don't know</a>, but you can learn how MarkALink works in <a href="https://github.com/RomanistHere/MarkALink" class="link about__link" target="_blank" rel="noreferrer" data-text="GitHub">GitHub</a>. It's open-source. Contribute? Go ahead!</span>
 					</span>
 					<span class="glitch_hover_text-after glitch_hover_text-pseudo">
-						No secrets. Does Google track your bookmarks through Chrome? I don't know, but here you can learn how MarkALink works. Contribute? Go ahead!
+						No secrets. Does Google track your bookmarks through Chrome? I don't know, but you can learn how MarkALink works in GitHub. It's open-source. Contribute? Go ahead!
 					</span>
 				</li>
 				<li class="about__item glitch_hover_text">
@@ -337,18 +350,18 @@
 		<div class="skewed skewed-opposite"></div>
 	</section>
 
-	<section class="cases">
+	<section class="cases section3 section_to_animate">
 		<h1 class="title title-black">
-			<span class="caseTyping title__typing">Usecases (in development).</span>
+			<span class="caseTyping title__typing typing" data-ref="casesRef" data-text="Usecases (in development).">Usecases (in development).</span>
 		</h1>
 
 		<div class="skewed skewed-opposite skewed-bottom_left"></div>
 	</section>
 
-	<section class="about plans">
+	<section class="about section4 plans section_to_animate">
 		<div class="plans__wrap">
 			<h1 class="title title-blue plans__title">
-				<span class="plansTyping title__typing">Plans.</span>
+				<span class="plansTyping title__typing typing" data-ref="plansRef" data-text="Plans.">Plans.</span>
 			</h1>
 			<div class="about__wrap plans__text_wrap">
 				<p class="about__text glitch_hover_text">
@@ -414,17 +427,20 @@
 		</div>
 	</section>
 
-	<section class="finale">
+	<footer class="finale section5 download section_to_animate">
 		<div class="finale__wrap">
 			<div class="finale__skewed skewed skewed-first">
-				Download:
-				<a href="https://chrome.google.com/webstore/detail/markalink/jgfjphpcldeifiifdmjpjoidkdhbcboe" class="link finale__link" target="_blank" rel="noreferrer" data-text="Chrome">Chrome</a>,
-				<a href="https://microsoftedge.microsoft.com/addons/detail/markalink/lkhhgeefhaeemmkliceeoeejahniniem" class="link finale__link" target="_blank" rel="noreferrer" data-text="Edge">Edge</a>
+				<div class="no_mobile">
+					<span class="no_tablet">Download:</span>
+					<a href="https://chrome.google.com/webstore/detail/markalink/jgfjphpcldeifiifdmjpjoidkdhbcboe" class="link finale__link" target="_blank" rel="noreferrer" data-text="Chrome">Chrome</a>,
+					<a href="https://microsoftedge.microsoft.com/addons/detail/markalink/lkhhgeefhaeemmkliceeoeejahniniem" class="link finale__link" target="_blank" rel="noreferrer" data-text="Edge">Edge</a>,
+					Opera
+				</div>
 			</div>
 			<div class="finale__skewed skewed skewed-second">
-				Designed and developed by <a href="https://romanisthere.github.io/" class="link finale__link finale__link-blue" target="_blank" rel="noreferrer" data-text="RomanistHere">RomanistHere</a>. For better web.
+				Designed and developed by <a href="https://romanisthere.github.io/" class="link finale__link finale__link-blue" target="_blank" rel="noreferrer" data-text="RomanistHere">RomanistHere</a>. <span class="no_mobile">For better web.</span>
 			</div>
 		</div>
-	</section>
+	</footer>
 </body>
 </html>
