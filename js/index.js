@@ -177,6 +177,18 @@ const initTyping = (elems, txt = '', timeoutRef, shouldRetype = state.shouldRety
     typeWriter()
 }
 
+$All('.about__link').forEach(elem => {
+    elem.addEventListener('mouseenter', e => {
+        const parent = e.currentTarget.parentNode.parentNode.parentNode
+        parent.classList.add('glitch_hover_text-no_anim')
+    })
+
+    elem.addEventListener('mouseleave', e => {
+        const parent = e.currentTarget.parentNode.parentNode.parentNode
+        parent.classList.remove('glitch_hover_text-no_anim')
+    })
+})
+
 const animateOnStart = () => {
     const scrollToString = window.location.hash.substr(1)
     if (!scrollToString)
@@ -215,7 +227,7 @@ const animateTextGlitch = section => {
 
     setTimeout(() => {
         section.classList.remove('section_to_animate-animated')
-    }, 2500)
+    }, 2000)
 }
 
 const animateSection = section => {
