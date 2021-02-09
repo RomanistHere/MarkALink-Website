@@ -9,7 +9,7 @@
 
 @font-face {
     font-family: Godsownjunkyard;
-    src: 
+    src:
         url('../fonts/Godsownjunkyard-Regular.woff2') format('woff2'),
         url('../fonts/Godsownjunkyard-Regular.woff') format('woff'),
         url('../fonts/Godsownjunkyard-Regular.otf');
@@ -86,6 +86,17 @@ html, body {
     background-color: var(--bg-color);
 
     text-align: left;
+
+    animation: logoAppear 1s ease;
+}
+
+@keyframes logoAppear {
+    0%, 50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .logo {

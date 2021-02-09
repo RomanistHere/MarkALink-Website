@@ -222,15 +222,23 @@ const makeGameGlitchAvail = () => {
     }
 }
 
-const animateTextGlitch = section => {
+const animateSectionMulti = section => {
     section.classList.add('section_to_animate-animated')
+    section.classList.add('stateAnimated')
 
     setTimeout(() => {
         section.classList.remove('section_to_animate-animated')
-    }, 2000)
+    }, 2400)
+}
+
+const animateSectionOnce = section => {
+    section.classList.add('section_to_animate-animated')
 }
 
 const animateSection = section => {
+    if (section.classList.contains('stateAnimated'))
+        return
+
     const typing = section.querySelector('.typing')
 
     if (typing) {
@@ -244,7 +252,9 @@ const animateSection = section => {
     if (section.classList.contains('game')) {
         setTimeout(animateGameGlitch, 500)
     } else if (section.classList.contains('about')) {
-        setTimeout(() => { animateTextGlitch(section) }, 500)
+        setTimeout(() => { animateSectionMulti(section) }, 500)
+    } else if (section.classList.contains('finale')) {
+        setTimeout(() => { animateSectionOnce(section) }, 300)
     }
 }
 
@@ -259,6 +269,8 @@ const deAnimateSection = section => {
         clearTimeout(state[timeoutRef])
         state = { ...state, [timeoutRef]: setTimeout(() => { state = { ...state, [timeoutRef]: null } }, 3000) }
     }
+
+    setTimeout(() => { section.classList.remove('stateAnimated') }, 7000)
 }
 
 const animateOnScroll = () => {
@@ -283,9 +295,48 @@ const animateOnScroll = () => {
     }
 }
 
+const watchForSections = () => {
+    let scrollTimer = null
+    let currentElem = null
+
+    const animationObserver = new IntersectionObserver((entries, observer) => {
+        for (const entry of entries) {
+            const isAppearing = entry.isIntersecting
+            const elem = entry.target
+
+            if (isAppearing) {
+                currentElem = elem
+            } else {
+                currentElem = null
+            }
+        }
+    }, {
+        threshold: .85
+    })
+
+    for (const element of $All('.sectionHeightWatch')) {
+        animationObserver.observe(element)
+    }
+
+    window.addEventListener('scroll', () => {
+        if (scrollTimer !== null) {
+            clearTimeout(scrollTimer)
+        }
+        scrollTimer = setTimeout(() => {
+            if (currentElem) {
+                currentElem.scrollIntoView({
+                    behavior: "smooth",
+                })
+            }
+        }, 500)
+    }, false)
+}
+
 const initPassiveInteractive = () => {
     animateOnStart()
     animateOnScroll()
+
+    watchForSections()
 
     setTimeout(() => {
         state = { ...state, shouldRetype: false }

@@ -440,6 +440,7 @@
     position: relative;
 
     color: var(--text-col);
+    --about-glitch-col: var(--blue-bright);
 }
 
 .about .title__typing {
@@ -504,6 +505,7 @@
 
 .glitch_hover_text-pseudo {
     position: absolute;
+    display: inline;
 
     top: 0;
     left: 0;
@@ -531,96 +533,99 @@
     z-index: -2;
 }
 
+.section_to_animate-animated .glitch_hover_text-before,
+.section_to_animate-animated .glitch_hover_text-after {
+    opacity: 0;
+}
+
+.section_to_animate-animated .about__text .glitch_hover_text-before {
+    animation: glitchyTextLong .28s step-start .1s, glitchyTextLong .5s step-start 1.8s;
+    clip-path: polygon(0 0%, 100% 0%, 100% 89%, 0 89%, 0 71%, 100% 72%, 100% 28%, 0 28%);
+    background-color: var(--about-glitch-col);
+}
+
+.section_to_animate-animated .about__text .glitch_hover_text-after {
+    animation: glitchyTextLong .28s step-start reverse, glitchyTextLong .5s step-start 1.9s reverse;
+    clip-path: polygon(0% 5%, 100% 7%, 100% 95%, 0% 97%, 0% 80%, 100% 80%, 100% 65%, 0% 63%, 0% 32%, 100% 34%, 100% 20%, 0% 16%);
+    background-color: var(--logo-col);
+}
+
+.section_to_animate-animated .about__list .glitch_hover_text:nth-child(1) .glitch_hover_text-before {
+    animation: glitchyTextLong .28s step-start .3s, glitchyTextLong .28s step-start 1.3s;
+    clip-path: polygon(0 0%, 100% 0%, 100% 89%, 0 89%, 0 71%, 100% 72%, 100% 28%, 0 28%);
+    background-color: var(--about-glitch-col);
+}
+
+.section_to_animate-animated .about__list .glitch_hover_text:nth-child(1) .glitch_hover_text-after {
+    animation: glitchyTextLong .28s step-start .27 reverse, glitchyTextLong .28s step-start 1.4s;
+    clip-path: polygon(0% 5%, 100% 7%, 100% 95%, 0% 97%, 0% 80%, 100% 80%, 100% 65%, 0% 63%, 0% 32%, 100% 34%, 100% 20%, 0% 16%);
+    background-color: var(--logo-col);
+}
+
+.section_to_animate-animated .about__list .glitch_hover_text:nth-child(2) .glitch_hover_text-before {
+    animation: glitchyTextLong .28s step-start .6s;
+    clip-path: polygon(0 0%, 100% 0%, 100% 89%, 0 89%, 0 71%, 100% 72%, 100% 28%, 0 28%);
+    background-color: var(--about-glitch-col);
+}
+
+.section_to_animate-animated .about__list .glitch_hover_text:nth-child(2) .glitch_hover_text-after {
+    animation: glitchyTextLong .28s step-start .5s;
+    clip-path: polygon(0% 5%, 100% 7%, 100% 95%, 0% 97%, 0% 80%, 100% 80%, 100% 65%, 0% 63%, 0% 32%, 100% 34%, 100% 20%, 0% 16%);
+    background-color: var(--logo-col);
+}
+
+.section_to_animate-animated .about__list .glitch_hover_text:nth-child(3) .glitch_hover_text-before {
+    animation: glitchyTextLong .28s step-start 1.2s;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 77%, 0 77%, 0 74%, 100% 72%, 100% 72%, 0 70%, 0 60%, 100% 59%, 100% 51%, 0 49%, 0 20%, 100% 31%, 100% 10%);
+    background-color: var(--about-glitch-col);
+}
+
+.section_to_animate-animated .about__list .glitch_hover_text:nth-child(3) .glitch_hover_text-after {
+    animation: glitchyTextLong .28s step-start 1.1s reverse;
+    clip-path: polygon(0 50%, 100% 50%, 100% 60%, 0 60%);
+    background-color: var(--logo-col);
+}
+
+.section_to_animate-animated .about__list .glitch_hover_text:nth-child(4) .glitch_hover_text-before {
+    animation: glitchyTextLong .28s step-start 1.5s;
+    clip-path: polygon(0 1%, 100% 0%, 100% 77%, 0 77%, 0 74%, 100% 72%, 100% 72%, 0 70%, 0 60%, 100% 59%, 100% 55%, 0 55%, 0 20%, 100% 31%, 100% 15%);
+    background-color: var(--about-glitch-col);
+}
+
+.section_to_animate-animated .about__list .glitch_hover_text:nth-child(4) .glitch_hover_text-after {
+    animation: glitchyTextLong .28s step-start 1.6s;
+    clip-path: polygon(0% 5%, 100% 7%, 100% 95%, 0% 97%, 0% 80%, 100% 80%, 100% 65%, 0% 63%, 0% 32%, 100% 34%, 100% 20%, 0% 16%);
+    background-color: var(--logo-col);
+}
+
+@keyframes glitchyTextLong {
+    0%   {
+        opacity: 1;
+        transform: translate(-10px, 10px) translateZ(0);
+    }
+    25%  {
+        transform: translate(-5px, -7px) translateZ(0);
+    }
+    50%  {
+        transform: translate(8px, 11px) translateZ(0);
+    }
+    75%  {
+        transform: translate(3px, -2px) translateZ(0);
+    }
+    100%  {
+        opacity: 1;
+        transform: translate(-2px, 3px) translateZ(0);
+    }
+}
+
+.about__question {
+    color: var(--violet-bright);
+    text-shadow:
+        0 0 2px var(--pink-glitch-dark),
+        0 0 10px var(--pink-glitch-dark);
+}
+
 @media (hover: hover) {
-    .glitch_hover_text-pseudo {
-        display: inline;
-    }
-
-    .section_to_animate-animated .glitch_hover_text-before,
-    .section_to_animate-animated .glitch_hover_text-after {
-        opacity: 0;
-    }
-
-    .section_to_animate-animated .about__text .glitch_hover_text-before {
-        animation: glitchyTextLong .28s step-start .1s, glitchyTextLong .5s step-start 1.8s;
-        clip-path: polygon(0 0%, 100% 0%, 100% 89%, 0 89%, 0 71%, 100% 72%, 100% 28%, 0 28%);
-        background-color: var(--about-glitch-col);
-    }
-
-    .section_to_animate-animated .about__text .glitch_hover_text-after {
-        animation: glitchyTextLong .28s step-start reverse, glitchyTextLong .5s step-start 1.9s reverse;
-        clip-path: polygon(0% 5%, 100% 7%, 100% 95%, 0% 97%, 0% 80%, 100% 80%, 100% 65%, 0% 63%, 0% 32%, 100% 34%, 100% 20%, 0% 16%);
-        background-color: var(--logo-col);
-    }
-
-    .section_to_animate-animated .about__list .glitch_hover_text:nth-child(1) .glitch_hover_text-before {
-        animation: glitchyTextLong .28s step-start .3s, glitchyTextLong .28s step-start 1.3s;
-        clip-path: polygon(0 0%, 100% 0%, 100% 89%, 0 89%, 0 71%, 100% 72%, 100% 28%, 0 28%);
-        background-color: var(--about-glitch-col);
-    }
-
-    .section_to_animate-animated .about__list .glitch_hover_text:nth-child(1) .glitch_hover_text-after {
-        animation: glitchyTextLong .28s step-start .27 reverse, glitchyTextLong .28s step-start 1.4s;
-        clip-path: polygon(0% 5%, 100% 7%, 100% 95%, 0% 97%, 0% 80%, 100% 80%, 100% 65%, 0% 63%, 0% 32%, 100% 34%, 100% 20%, 0% 16%);
-        background-color: var(--logo-col);
-    }
-
-    .section_to_animate-animated .about__list .glitch_hover_text:nth-child(2) .glitch_hover_text-before {
-        animation: glitchyTextLong .28s step-start .6s;
-        clip-path: polygon(0 0%, 100% 0%, 100% 89%, 0 89%, 0 71%, 100% 72%, 100% 28%, 0 28%);
-        background-color: var(--about-glitch-col);
-    }
-
-    .section_to_animate-animated .about__list .glitch_hover_text:nth-child(2) .glitch_hover_text-after {
-        animation: glitchyTextLong .28s step-start .5s;
-        clip-path: polygon(0% 5%, 100% 7%, 100% 95%, 0% 97%, 0% 80%, 100% 80%, 100% 65%, 0% 63%, 0% 32%, 100% 34%, 100% 20%, 0% 16%);
-        background-color: var(--logo-col);
-    }
-
-    .section_to_animate-animated .about__list .glitch_hover_text:nth-child(3) .glitch_hover_text-before {
-        animation: glitchyTextLong .28s step-start 1.2s;
-        clip-path: polygon(0% 0%, 100% 0%, 100% 77%, 0 77%, 0 74%, 100% 72%, 100% 72%, 0 70%, 0 60%, 100% 59%, 100% 51%, 0 49%, 0 20%, 100% 31%, 100% 10%);
-        background-color: var(--about-glitch-col);
-    }
-
-    .section_to_animate-animated .about__list .glitch_hover_text:nth-child(3) .glitch_hover_text-after {
-        animation: glitchyTextLong .28s step-start 1.1s reverse;
-        clip-path: polygon(0 50%, 100% 50%, 100% 60%, 0 60%);
-        background-color: var(--logo-col);
-    }
-
-    .section_to_animate-animated .about__list .glitch_hover_text:nth-child(4) .glitch_hover_text-before {
-        animation: glitchyTextLong .28s step-start 1.5s;
-        clip-path: polygon(0 1%, 100% 0%, 100% 77%, 0 77%, 0 74%, 100% 72%, 100% 72%, 0 70%, 0 60%, 100% 59%, 100% 55%, 0 55%, 0 20%, 100% 31%, 100% 15%);
-        background-color: var(--about-glitch-col);
-    }
-
-    .section_to_animate-animated .about__list .glitch_hover_text:nth-child(4) .glitch_hover_text-after {
-        animation: glitchyTextLong .28s step-start 1.6s;
-        clip-path: polygon(0% 5%, 100% 7%, 100% 95%, 0% 97%, 0% 80%, 100% 80%, 100% 65%, 0% 63%, 0% 32%, 100% 34%, 100% 20%, 0% 16%);
-        background-color: var(--logo-col);
-    }
-
-    @keyframes glitchyTextLong {
-        0%   {
-            opacity: 1;
-            transform: translate(-10px, 10px) translateZ(0);
-        }
-        25%  {
-            transform: translate(-5px, -7px) translateZ(0);
-        }
-        50%  {
-            transform: translate(8px, 11px) translateZ(0);
-        }
-        75%  {
-            transform: translate(3px, -2px) translateZ(0);
-        }
-        100%  {
-            opacity: 1;
-            transform: translate(-2px, 3px) translateZ(0);
-        }
-    }
-
     .glitch_hover_text:hover .glitch_hover_text-highlight {
         text-shadow: 2px -2px 2px var(--logo-col);
     }
@@ -630,14 +635,14 @@
     }
 
     .glitch_hover_text:hover .glitch_hover_text-after {
-        animation: glitchyText .6s step-end infinite;
+        animation: glitchyText .65s step-end infinite;
     }
 
-    .glitch_hover_text-no_anim:hover .glitch_hover_text-before {
+    .glitch_hover_text-no_anim:hover .glitch_hover_text-before:hover {
         animation: glitchyTextLight .5s step-start .1s infinite;
     }
 
-    .glitch_hover_text-no_anim:hover .glitch_hover_text-after {
+    .glitch_hover_text-no_anim:hover .glitch_hover_text-after:hover {
         animation: glitchyTextLight .6s step-end infinite;
     }
 
@@ -723,7 +728,7 @@
 .plans {
     --logo-col: #86e5ef;
     --logo-shadow: var(--blue-bright);
-    --about-glitch-col: gold;
+    --about-glitch-col: #FED128;
 
     display: flex;
     justify-content: center;
@@ -900,15 +905,70 @@
     }
 }
 
-.skewed-first {
+.finale__skewed-first {
     background-color: var(--blue-bright);
+
+    transform: skewY(4deg) translateX(-200%);
 }
 
-.skewed-second {
+.finale__skewed-second {
     background-color: var(--logo-col);
 
-    transform: skewY(-4deg);
+    transform: skewY(-4deg) translateX(200%);
     transform-origin: top left;
+}
+
+.section_to_animate-animated .finale__skewed-first {
+    animation: finaleApearLeft 1s ease;
+    transform: skewY(4deg);
+}
+
+.section_to_animate-animated .finale__skewed-second {
+    animation: finaleApearRight .5s ease;
+    transform: skewY(-4deg);
+}
+
+@keyframes finaleApearLeft {
+    0%, 50% {
+        transform: skewY(4deg) translateX(-200%);
+    }
+    100% {
+        transform: skewY(4deg);
+    }
+}
+
+@keyframes finaleApearRight {
+    0% {
+        transform: skewY(-4deg) translateX(200%);
+    }
+    100% {
+        transform: skewY(-4deg);
+    }
+}
+
+.finale__skewed-second::before,
+.finale__skewed-first::after {
+    content: '';
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    background-color: inherit;
+}
+
+.finale__skewed-second::before {
+    left: -100%;
+    right: 99%;
+
+    background: linear-gradient(90deg, rgba(19,19,19,1) 0%, rgba(254,209,40,1) 100%);
+}
+
+.finale__skewed-first::after {
+    right: -100%;
+    left: 99%;
+
+    background: linear-gradient(90deg, rgba(95,230,228,1) 0%, rgba(19,19,19,1) 100%);
 }
 
 /* // MEDIA QUERIES // */
