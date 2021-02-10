@@ -31,6 +31,15 @@
     background: var(--shadow-col-1);
 }
 
+.full_screen::-webkit-scrollbar {
+    display: none;
+}
+
+.full_screen {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
 .section_to_animate {
     height: auto;
 }
@@ -1069,7 +1078,7 @@
     }
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1024px) {
     /* // tablets // */
     :root {
         --title-fz: 50px;
@@ -1083,6 +1092,7 @@
 
     .logo_wrap {
         transform: none;
+        animation: logoAppear 1s ease;
     }
 
     .game__field {
@@ -1216,7 +1226,11 @@
     }
 
     .logo_wrap {
-        transform: scale(.5);
+        transform: scale(.5) translate(-50%, -50%);
+        transform-origin: left top;
+        position: absolute;
+        top: 50%;
+        left: 50%;
     }
 
     .game {

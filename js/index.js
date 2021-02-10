@@ -311,7 +311,7 @@ const watchForSections = () => {
             }
         }
     }, {
-        threshold: .85
+        threshold: .95
     })
 
     for (const element of $All('.sectionHeightWatch')) {
@@ -332,11 +332,64 @@ const watchForSections = () => {
     }, false)
 }
 
+const watchFullScreen = () => {
+    window.addEventListener('resize', () => {
+        var maxHeight = window.screen.height,
+            maxWidth = window.screen.width,
+            curHeight = window.innerHeight,
+            curWidth = window.innerWidth;
+
+        if (maxWidth == curWidth && maxHeight == curHeight) {
+            document.documentElement.classList.add('full_screen')
+        } else {
+            document.documentElement.classList.remove('full_screen')
+        }
+    })
+}
+
+const initClickOnLogo = () => {
+    if (window.screen.availWidth <= 1024) {
+        $('.logo_capt').remove()
+        return
+    }
+
+    const logo = $('.logo_wrap')
+    const doc = document.documentElement
+
+    const isFullscreen = () => {
+        return document.fullscreenElement
+        || document.webkitFullscreenElement
+        || document.mozFullScreenElement
+        || document.webkitCurrentFullScreenElement
+    }
+
+    handleClickPrev(logo, () => {
+        if (!isFullscreen()) {
+            if (doc.requestFullscreen)
+                doc.requestFullscreen()
+            else if (doc.mozRequestFullScreen)
+                doc.mozRequestFullScreen()
+            else if (doc.webkitRequestFullscreen)
+                doc.webkitRequestFullscreen()
+        } else {
+            if (document.exitFullscreen)
+                document.exitFullscreen()
+            else if (document.mozCancelFullScreen)
+                document.mozCancelFullScreen()
+            else if (document.webkitExitFullscreen)
+                document.webkitExitFullscreen()
+        }
+    })
+}
+
 const initPassiveInteractive = () => {
     animateOnStart()
     animateOnScroll()
 
     watchForSections()
+    watchFullScreen()
+
+    initClickOnLogo()
 
     setTimeout(() => {
         state = { ...state, shouldRetype: false }

@@ -42,6 +42,30 @@ html, body {
     height: 100vh;
 }
 
+.logo_capt {
+    position: absolute;
+    z-index: -1;
+
+    opacity: 0;
+
+    font-size: 24px;
+    animation: logoDisAppear 1.2s ease;
+}
+
+@keyframes logoDisAppear {
+    0%, 80% {
+        z-index: 1;
+        opacity: 1;
+    }
+    99% {
+        z-index: 1;
+        opacity: 0;
+    }
+    100% {
+        z-index: -1;
+    }
+}
+
 .logo__neon {
     position: relative;
     display: block;
@@ -84,10 +108,11 @@ html, body {
     transform: scale(1.25);
 
     background-color: var(--bg-color);
+    cursor: pointer;
 
     text-align: left;
 
-    animation: logoAppear 1s ease;
+    animation: logoAppear 2s ease;
 }
 
 @keyframes logoAppear {
