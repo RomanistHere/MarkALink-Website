@@ -732,6 +732,10 @@
     color: var(--bg-color);
 }
 
+.cases__title {
+    padding-top: 0;
+}
+
 /* // plans section // */
 
 .plans {

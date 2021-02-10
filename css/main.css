@@ -288,3 +288,7 @@ html, body {
 .glitch_hover_text-pseudo {
     display: none;
 }
+
+.cases__swiper {
+    display: none;
+}

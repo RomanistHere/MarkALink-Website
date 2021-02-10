@@ -349,9 +349,49 @@
 	</section>
 
 	<section class="cases section_to_animate sectionHeightWatch">
-		<h1 class="title title-black">
-			<span class="caseTyping title__typing typing" data-ref="casesRef" data-text="Usecases (in development).">Usecases (in development).</span>
-		</h1>
+		<div class="cases_wrap">
+			<h1 class="title title-black cases__title">
+				<span class="caseTyping title__typing typing" data-ref="casesRef" data-text="Usecases.">Usecases.</span>
+			</h1>
+
+			<div class="swiper-container cases__swiper">
+			    <div class="swiper-wrapper">
+					<div
+						class="swiper-slide cases__slide"
+						style="background-image: linear-gradient(rgba(117, 196, 130, .3), rgba(0, 124, 160, .3)), url(./images/1.jpg);"
+					>
+						<div
+							class="cases__image"
+							style="background-image: linear-gradient(rgba(117, 196, 130, .5), rgba(0, 124, 160, .5)), url(./images/1.jpg);"
+						></div>
+					</div>
+					<div
+						class="swiper-slide cases__slide"
+						style="background-image: linear-gradient(rgba(117, 196, 130, .3), rgba(0, 124, 160, .3)), url(./images/2.jpg);">
+						<div
+							class="cases__image"
+							style="background-image: linear-gradient(rgba(117, 196, 130, .5), rgba(0, 124, 160, .5)), url(./images/2.jpg);"
+						></div>
+					</div>
+					<div
+						class="swiper-slide cases__slide"
+						style="background-image: linear-gradient(rgba(117, 196, 130, .3), rgba(0, 124, 160, .3)), url(./images/1.jpg);">
+						<div
+							class="cases__image"
+							style="background-image: linear-gradient(rgba(117, 196, 130, .5), rgba(0, 124, 160, .5)), url(./images/1.jpg);"
+						></div>
+					</div>
+					<div
+						class="swiper-slide cases__slide"
+						style="background-image: linear-gradient(rgba(117, 196, 130, .3), rgba(0, 124, 160, .3)), url(./images/2.jpg);">
+						<div
+							class="cases__image"
+							style="background-image: linear-gradient(rgba(117, 196, 130, .5), rgba(0, 124, 160, .5)), url(./images/2.jpg);"
+						></div>
+					</div>
+			    </div>
+			</div>
+		</div>
 
 		<div class="skewed skewed-opposite skewed-bottom_left"></div>
 	</section>
@@ -440,5 +480,11 @@
 			</div>
 		</div>
 	</footer>
+
+
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+	<link rel="stylesheet" href="css/slider.css">
+	<script src="js/slider.js"></script>
 </body>
 </html>
