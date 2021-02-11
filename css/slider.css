@@ -105,13 +105,13 @@
 
     left: 10px;
     top: 10px;
-    padding: 10px;
 
     font-size: 12px;
 
     border: 1px solid var(--blue-bright);
 
     transform: perspective(1000px) translateZ(-1000px) rotateX(0deg);
+    will-change: transform;
     opacity: 0;
 }
 
@@ -123,7 +123,7 @@
 }
 
 @keyframes casesDesc {
-    0%, 50% {
+    0%, 70% {
         transform: perspective(1000px) translateZ(-1000px) rotateX(0deg);
         opacity: 0;
     }
@@ -133,7 +133,7 @@
 }
 
 .cases__p {
-    margin: 0 0 10px;
+    margin: 10px;
 
     color: var(--blue-bright);
     text-shadow:
@@ -143,6 +143,13 @@
         0 0 2px var(--bg-color),
         0 0 5px var(--blue-bright),
         0 0 5px var(--bg-color),
+        0 0 5px var(--bg-color),
+        0 0 5px var(--bg-color),
+        0 0 5px var(--bg-color),
+        0 0 10px var(--bg-color),
+        0 0 10px var(--bg-color),
+        0 0 10px var(--blue-bright),
+        0 0 10px var(--blue-bright),
         0 0 10px var(--blue-bright);
 }
 
@@ -154,6 +161,11 @@
     .cases__slide {
         height: 270px;
     }
+
+    .cases-expanded .swiper-slide-active .cases__desc {
+        font-size: 10px;
+        transform: perspective(1000px) translate3d(-70px, -74px, 220px) rotateX(-10deg);
+    }
 }
 
 @media screen and (max-height: 670px) and (min-width: 1024px) {
@@ -163,6 +175,15 @@
 
     .cases__slide {
         height: 250px;
+    }
+
+    .cases__p {
+        margin: 8px;
+    }
+
+    .cases-expanded .swiper-slide-active .cases__desc {
+        font-size: 8px;
+        transform: perspective(1000px) translate3d(-90px, -50px, 140px) rotateX(-10deg);
     }
 }
 
@@ -174,6 +195,11 @@
     .cases__slide {
         height: 270px;
     }
+
+    .cases-expanded .swiper-slide-active .cases__desc {
+        font-size: 10px;
+        transform: perspective(1000px) translate3d(-90px, -70px, 140px) rotateX(-10deg);
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -183,6 +209,15 @@
 
     .cases__slide {
         height: 200px;
+    }
+
+    .cases__p {
+        margin: 8px;
+    }
+
+    .cases-expanded .swiper-slide-active .cases__desc {
+        transform: perspective(1000px) translate3d(0, 170px, 110px) rotateX(10deg);
+        font-size: 8px;
     }
 }
 
