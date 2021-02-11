@@ -33,6 +33,8 @@
 
     transition: filter ease .3s;
     will-change: filter;
+
+    perspective: 1000px;
 }
 
 .cases-expanded .cases__slide {
@@ -95,6 +97,53 @@
 .cases-expanded .swiper-slide-active .cases__clip_wrap {
     pointer-events: unset;
     transform: scale(2);
+}
+
+.cases__desc {
+    position: absolute;
+    pointer-events: none;
+
+    left: 10px;
+    top: 10px;
+    padding: 10px;
+
+    font-size: 12px;
+
+    border: 1px solid var(--blue-bright);
+
+    transform: perspective(1000px) translateZ(-1000px) rotateX(0deg);
+    opacity: 0;
+}
+
+.cases-expanded .swiper-slide-active .cases__desc {
+    transform: perspective(1000px) translate3d(-112px, -70px, 230px) rotateX(-10deg);
+    opacity: 1;
+    background: rgb(0, 243, 255, .12);
+    animation: casesDesc 2s ease;
+}
+
+@keyframes casesDesc {
+    0%, 50% {
+        transform: perspective(1000px) translateZ(-1000px) rotateX(0deg);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.cases__p {
+    margin: 0 0 10px;
+
+    color: var(--blue-bright);
+    text-shadow:
+        0 0 2px var(--blue-bright),
+        0 0 2px var(--bg-color),
+        0 0 2px var(--bg-color),
+        0 0 2px var(--bg-color),
+        0 0 5px var(--blue-bright),
+        0 0 5px var(--bg-color),
+        0 0 10px var(--blue-bright);
 }
 
 @media screen and (max-height: 869px) and (min-width: 1024px) {
