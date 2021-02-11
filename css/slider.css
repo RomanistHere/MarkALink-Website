@@ -32,7 +32,7 @@
     opacity: .9;
 
     transition: filter ease .3s;
-
+    will-change: filter;
 }
 
 .cases-expanded .cases__slide {
