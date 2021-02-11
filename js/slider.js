@@ -8,6 +8,24 @@ const swiper = new Swiper('.swiper-container', {
     slideToClickedSlide: true,
     initialSlide: 2,
 
+    breakpoints: {
+        // when window width is >= 320px
+        320: {
+            slidesPerView: 1.3,
+            spaceBetween: 0
+        },
+        // when window width is >= 480px
+        767: {
+            slidesPerView: 2,
+            spaceBetween: 10
+        },
+        // when window width is >= 640px
+        1025: {
+            spaceBetween: 30,
+            slidesPerView: 3,
+        }
+    },
+
     coverflowEffect: {
 		rotate: 60,
 		stretch: 10,

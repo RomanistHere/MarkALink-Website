@@ -1252,6 +1252,11 @@
 @media screen and (max-height: 500px) and (max-width: 1024px) {
     /* // phones album //  */
     :root {
+        --title-fz: 24px;
+        --title-fz-sec: 18px;
+        --text-fz: 16px;
+        --text-lh: 30px;
+        
         --cell-side: 50px;
         --cell-margin: 18px;
     }
@@ -1275,5 +1280,9 @@
 
     .plans {
         height: auto;
+    }
+
+    .cases__title {
+        padding-bottom: 10px;
     }
 }
