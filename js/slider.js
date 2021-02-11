@@ -1,12 +1,12 @@
 const swiper = new Swiper('.swiper-container', {
-    loop: true,
+    // loop: true,
     spaceBetween: 30,
     slidesPerView: 3,
     grabCursor: true,
     effect: 'coverflow',
     centeredSlides: true,
     slideToClickedSlide: true,
-    initialSlide: 2,
+    initialSlide: 1,
 
     breakpoints: {
         // when window width is >= 320px
