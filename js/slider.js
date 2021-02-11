@@ -13,7 +13,7 @@ const swiper = new Swiper('.swiper-container', {
 		stretch: 10,
 		depth: 50,
 		modifier: 1,
-		slideShadows: true,
+		slideShadows: false,
 	},
 
     on: {
@@ -24,7 +24,7 @@ const swiper = new Swiper('.swiper-container', {
             const target = event.target
             if (target.classList.contains('swiper-slide-active'))
                 document.querySelector('.cases').classList.add('cases-expanded')
-            else if (target.classList.contains('cases__image'))
+            else if (target.classList.contains('cases__clip_wrap'))
                 document.querySelector('.cases').classList.remove('cases-expanded')
         }
     },

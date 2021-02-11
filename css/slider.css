@@ -12,6 +12,8 @@
     --color3: #141414;
     --color4: #181818;
 
+    --blue: rgba(70, 70, 206, .7);
+
     animation: logoAppear 1s ease;
 }
 
@@ -26,12 +28,11 @@
     background-position: center;
     background-size: cover;
 
-    list-style: none;
-    box-shadow:
-        0 0 20px var(--color2),
-        0 0 40px var(--color3);
+    filter: drop-shadow(0 0 2px var(--bg-color)) drop-shadow(0 0 5px var(--bg-color));
+    opacity: .9;
 
-    transition: box-shadow ease .3s;
+    transition: filter ease .3s;
+
 }
 
 .cases-expanded .cases__slide {
@@ -39,11 +40,19 @@
     --color2: #f743c9;
     --color3: var(--blue-bright);
 
-    box-shadow:
-        0 0 20px var(--color3),
-        0 0 20px var(--color1),
-        0 0 20px var(--color2),
-        0 0 30px var(--color2);
+    filter: drop-shadow(0 0 15px var(--blue)) drop-shadow(0 0 10px var(--blue));
+}
+
+.cases__clip_wrap {
+    pointer-events: none;
+
+    width: 100%;
+    height: 100%;
+    padding: 4px;
+
+    clip-path: polygon(0 0, 62% 0%, 66% 5%, 100% 5%, 100% 51%, 95% 56%, 95% 85%, 100% 89%, 100% 100%, 13% 100%, 0 88%);
+    background-color: var(--blue);
+    transition: transform ease .3s, opacity ease .5s;
 }
 
 .cases__image {
@@ -54,14 +63,36 @@
     background-position: center;
     background-size: cover;
 
-    opacity: 0;
-
-    transition: transform ease .3s, opacity ease .5s;
+    clip-path: polygon(0 0, 62% 0%, 66% 5%, 100% 5%, 100% 51%, 95% 56%, 95% 85%, 100% 89%, 100% 100%, 13% 100%, 0 88%);
 }
 
-.cases-expanded .swiper-slide-active .cases__image {
-    pointer-events: unset;
-    transform: scale(2.1, 2.1);
+.cases__clip_wrap-2,
+.cases__clip_wrap-2 .cases__image {
+    clip-path: polygon(0% 6%, 4% 0, 21% 0%, 24% 6%, 51% 6%, 54% 0, 96% 0, 100% 6%, 100% 21%, 96% 26%, 96% 43%, 100% 48%, 100% 93%, 95% 100%, 64% 100%, 59% 94%, 38% 94%, 34% 100%, 5% 100%, 0 93%);
+}
 
-    opacity: .95;
+.cases__clip_wrap-3,
+.cases__clip_wrap-3 .cases__image {
+    clip-path: polygon(0% 3%, 2% 0%, 44% 0%, 46% 3%, 85% 3%, 88% 0%, 97% 0, 100% 4%, 100% 95%, 97% 100%, 44% 100%, 42% 97%, 11% 97%, 8% 100%, 3% 100%, 0% 96%);
+}
+
+.cases__clip_wrap-4 {
+    clip-path: polygon(0 5%, 4% 0, 14% 0, 17% 5%, 84% 5%, 88% 0%, 96% 0, 100% 5%, 100% 94%, 96% 100%, 85% 100%, 81% 100%, 68% 100%, 65% 100%, 4% 100%, 0 95%);
+}
+
+.cases__clip_wrap-4 .cases__image {
+    clip-path: polygon(0 5%, 4% 0, 14% 0, 17% 5%, 84% 5%, 88% 0%, 96% 0, 100% 5%, 100% 94%, 96% 100%, 85% 100%, 82% 95%, 68% 95%, 65% 100%, 4% 100%, 0 95%);
+}
+
+.cases__clip_wrap-5 {
+    clip-path: polygon(0% 5%, 4% 0%, 13% 0%, 16% 0, 26% 0, 30% 0%, 96% 0%, 100% 5%, 100% 19%, 97% 23%, 97% 81%, 100% 84%, 100% 95%, 97% 100%, 90% 100%, 83% 100%, 16% 100%, 8% 100%, 3% 100%, 0% 95%, 0% 83%, 0% 83%, 3% 79%, 3% 56%, 0% 53%);
+}
+
+.cases__clip_wrap-5 .cases__image {
+    clip-path: polygon(0% 5%, 4% 0%, 13% 0%, 15% 5%, 28% 5%, 30% 0%, 96% 0%, 100% 5%, 100% 19%, 97% 23%, 97% 81%, 100% 84%, 100% 95%, 97% 100%, 90% 100%, 86% 96%, 11% 96%, 8% 100%, 3% 100%, 0% 95%, 0% 83%, 0% 83%, 3% 79%, 3% 56%, 0% 53%);
+}
+
+.cases-expanded .swiper-slide-active .cases__clip_wrap {
+    pointer-events: unset;
+    transform: scale(2);
 }
