@@ -18,15 +18,21 @@
 
 	<link rel="shortcut icon" type="image/png" href="logo32.png"/>
 
-	<link rel="preload" href="fonts/NEON.woff2" as="font" type="font/woff2">
-	<link rel="preload" href="fonts/Godsownjunkyard-Regular.woff2" as="font" type="font/woff2">
+	<link rel="preload" href="fonts/NEON.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="fonts/Godsownjunkyard-Regular.woff2" as="font" type="font/woff2" crossorigin>
 
 	<link rel="stylesheet" href="css/main.css">
+	<!-- <style type="text/css">
+		/* inline minified main css here */
+	</style> -->
 	<link rel="stylesheet" href="css/main-non-crit.css" media="print" onload="this.media='all'">
 
 	<script defer src="js/index.js"></script>
 
 	<script async defer data-domain="marka.link" src="https://plausible.io/js/plausible.js"></script>
+
+	<script defer src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+	<script defer src="js/slider.js"></script>
 
 	<title>MarkALink</title>
 </head>
@@ -499,13 +505,13 @@
 					</li>
 					<li class="about__item glitch_hover_text">
 						<span class="glitch_hover_text-before glitch_hover_text-pseudo">
-							The most cyberpunk app. It could be useful if we were talking about notifications, reminders, etc.
+							The most cyberpunk app. Desktop or mobile app could be useful in future if we were talking about notifications, reminders, etc.
 						</span>
 						<span>
-							<strong class="about__highlight">The most cyberpunk app.</strong> It could be useful if we were talking about notifications, reminders, etc.
+							<strong class="about__highlight">The most cyberpunk app.</strong> Desktop or mobile app could be useful in future if we were talking about notifications, reminders, etc.
 						</span>
 						<span class="glitch_hover_text-after glitch_hover_text-pseudo">
-							The most cyberpunk app. It could be useful if we were talking about notifications, reminders, etc.
+							The most cyberpunk app. Desktop or mobile app could be useful in future if we were talking about notifications, reminders, etc.
 						</span>
 					</li>
 					<li class="about__item glitch_hover_text" data-text="">
@@ -542,8 +548,6 @@
 
 	<!-- slider -->
 	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 	<link rel="stylesheet" href="css/slider.css">
-	<script src="js/slider.js"></script>
 </body>
 </html>

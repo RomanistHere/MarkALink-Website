@@ -177,17 +177,21 @@ const initTyping = (elems, txt = '', timeoutRef, shouldRetype = state.shouldRety
     typeWriter()
 }
 
-$All('.about__link').forEach(elem => {
-    elem.addEventListener('mouseenter', e => {
-        const parent = e.currentTarget.parentNode.parentNode.parentNode
-        parent.classList.add('glitch_hover_text-no_anim')
-    })
+const animateAboutLinks = () => {
+    $All('.about__link').forEach(elem => {
+        elem.addEventListener('mouseenter', e => {
+            const parent = e.currentTarget.parentNode.parentNode.parentNode
+            parent.classList.add('glitch_hover_text-no_anim')
+        })
 
-    elem.addEventListener('mouseleave', e => {
-        const parent = e.currentTarget.parentNode.parentNode.parentNode
-        parent.classList.remove('glitch_hover_text-no_anim')
+        elem.addEventListener('mouseleave', e => {
+            const parent = e.currentTarget.parentNode.parentNode.parentNode
+            parent.classList.remove('glitch_hover_text-no_anim')
+        })
     })
-})
+}
+
+setTimeout(animateAboutLinks, 10)
 
 const animateOnStart = () => {
     const scrollToString = window.location.hash.substr(1)
@@ -399,5 +403,5 @@ const initPassiveInteractive = () => {
 }
 
 window.addEventListener('load', () => {
-    initPassiveInteractive()
+    setTimeout(initPassiveInteractive, 10)
 }, false)
