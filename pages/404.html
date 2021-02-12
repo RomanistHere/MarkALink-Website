@@ -3,25 +3,12 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="Description" content="Non-commercial and open-source cyberpunk browser extension by Romanisthere. Bookmark experience from the future. Prevent search results you didn't like from being ever shown in the web! Make other links visible!">
-	<meta name="keywords" content="Cyberpunk, Non-commerical, Open-source, Roman Smunyov, RomanistHere, PopUpoff, independent, MarkALink, private notes, link notes, notes">
-
-	<meta property="og:title" content="MarkALink" />
-	<meta property="og:type" content="product" />
-	<meta property="og:image" content="images/920x680png.png" />
-	<meta property="og:url" content="https://marka.link" />
-	<meta property="og:description" content="Non-commercial and open-source extension by Romanisthere. Prevent search results you didn't like from being ever shown in the web! Make the links you want always visible!"/>
-
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:image" content="https://marka.link/images/920x680png.png" />
-	<meta name="twitter:image:src" content="https://marka.link/images/920x680png.png" />
-
-	<link rel="shortcut icon" type="../image/png" href="logo32.png"/>
+	<link rel="shortcut icon" type="image/png" href="../logo32.png"/>
 
 	<link rel="preload" href="../fonts/NEON.woff2" as="font" type="font/woff2" crossorigin>
-
-	<link rel="stylesheet" href="../css/main.css">
-	<link rel="stylesheet" href="../css/main-non-crit.css" media="print" onload="this.media='all'">
+	<style type="text/css">
+		body,html{position:relative;width:100%;height:100%;margin:0;padding:0;-webkit-box-sizing:border-box;box-sizing:border-box;background-color:#131313}@font-face{font-family:neon;src:url(../fonts/NEON.woff2) format('woff2'),url(../fonts/NEON.woff) format('woff'),url(../fonts/NEON.TTF);font-display:swap}:root{--bg-color:#131313;--bg-color-glitch:#080808;--logo-col:#FED128;--logo-shadow:#FA1C16;--logo-shadow-2:#806914;--active-col:#44fb3a}.logo_section{width:100%;height:100%;display:-webkit-flex;display:-ms-flex;display:flex;justify-content:center;-ms-align-items:center;align-items:center}.MarkALink_logo__neon{position:relative;display:block;font-family:neon;color:#fb4264;font-size:136px;line-height:1;text-shadow:0 0 1vw var(--logo-shadow),0 0 3vw var(--logo-shadow),0 0 10vw var(--logo-shadow),0 0 10vw var(--logo-shadow),0 0 .4vw var(--logo-col),.5vw .5vw .1vw var(--logo-shadow-2);color:var(--logo-col)}.MarkALink_logo::selection,.MarkALink_logo__neon::selection{background-color:var(--active-col)}.MarkALink_logo-trick::selection{background-color:var(--logo-shadow)}.MarkALink_logo__neon-bot{padding-left:175px}.MarkALink_logo-invis{opacity:0}.MarkALink_logo-trick{position:absolute;left:26px;bottom:-18px;font-size:306px}.MarkALink_logo_wrap{position:relative;width:750px;height:272px;background-color:var(--bg-color);text-align:left}.MarkALink_logo{position:absolute;top:0;left:0}.MarkALink_logo-based{animation:switch1 17s step-start infinite}@keyframes switch1{0%,100%,19%,20%,21%,39%,40%,42%,55%,56%,70%,95%{opacity:1;transform:skew(0)}20.1%,20.9%,40.1%,41.9%,70.1%,94.9%{opacity:0}19.5%{transform:skew(5deg)}39.5%{transform:skew(15deg)}55.5%{transform:skew(-5deg)}}.MarkALink_logo-glitch{animation:switch2 17s step-start infinite}@keyframes switch2{0%,100%,20%,21%,40%,42%,70%,95%{opacity:0}20.1%,20.9%,40.1%,41.9%,70.1%,94.9%{opacity:1}}.MarkALink_logo-shift{animation:shift 17s step-start infinite;clip-path:polygon(0 20%,100% 20%,100% 40%,0 40%);transform:none;background:var(--bg-color-glitch)}.MarkALink_logo-shift-1{clip-path:polygon(0 50%,100% 50%,100% 60%,0 60%)}.MarkALink_logo-shift-2{clip-path:polygon(0 0,100% 0,100% 10%,0 10%)}.MarkALink_logo-shift-3{clip-path:polygon(0 90%,100% 90%,100% 100%,0 100%)}@keyframes shift{0%,19%,20.1%,39%,40.1%,55%,56%,69%,70.1%,95%,95.2%,96%{transform:none;opacity:0}20%,40%,55.2%,55.8%,70%,95.4%,95.8%{transform:translate(5px,-2px);opacity:1}}.MarkALink_logo-glitch-shift{animation:shift2 17s step-start infinite;clip-path:polygon(0 20%,100% 20%,100% 50%,0 50%);transform:none;background:var(--bg-color-glitch)}@keyframes shift2{0%,100%,20.5%,21%,41.5%,42%,94.2%,95%{transform:none;opacity:0}20.7%,20.9%,41.7%,41.9%,94.3%,94.9%{opacity:1;transform:translate(5px,-2px)}}.MarkALink_logo_wrap-glitch .MarkALink_logo__neon{text-shadow:0 0 .8vw var(--logo-shadow),0 0 2vw var(--logo-shadow),0 0 8vw var(--logo-shadow),0 0 .3vw var(--logo-col),.5vw .5vw .1vw var(--logo-shadow-2)}.MarkALink_logo_wrap-glitch .MarkALink_logo-shift{animation:urgentGlitch .5s step-start infinite}@keyframes urgentGlitch{0%,100%{transform:none;opacity:0}21%,23%,96%,97%{transform:translate(-45px,10px);opacity:1}}.MarkALink_logo_wrap-success .MarkALink_logo__neon{font-size:160px;--logo-shadow-2:#a1f5a1;--logo-shadow:#208c20;--logo-col:#46ff09;text-shadow:0 0 1vw var(--logo-shadow),0 0 3vw var(--logo-shadow),0 0 10vw var(--logo-shadow),0 0 10vw var(--logo-shadow),0 0 .4vw var(--logo-col),.5vw .5vw .1vw var(--logo-shadow-2);color:var(--logo-col)}.MarkALink_logo_wrap-err .MarkALink_logo__neon{font-size:160px;font-size:177px;--logo-shadow-2:#ff6565;--logo-shadow:#9e2121;--logo-col:#ff0909;text-shadow:0 0 1vw var(--logo-shadow),0 0 3vw var(--logo-shadow),0 0 10vw var(--logo-shadow),0 0 10vw var(--logo-shadow),0 0 .4vw var(--logo-col),.5vw .5vw .1vw var(--logo-shadow-2);color:var(--logo-col)}.MarkALink_logo_wrap-success .MarkALink_logo{left:-67px;right:-67px;top:57px;width:718px}.MarkALink_logo_wrap-err .MarkALink_logo{width:auto;left:auto;right:auto;top:47px}.MarkALink_logo_wrap-success .MarkALink_logo-shift{animation:successGlitch 5s step-start infinite;clip-path:polygon(0 35%,100% 35%,100% 40%,0 40%)}.MarkALink_logo_wrap-success .MarkALink_logo-shift-1{clip-path:polygon(0 50%,100% 50%,100% 60%,0 60%)}.MarkALink_logo_wrap-success .MarkALink_logo-shift-2{clip-path:polygon(0 0,100% 0,100% 30%,0 30%)}.MarkALink_logo_wrap-success .MarkALink_logo-shift-3{clip-path:polygon(0 80%,100% 80%,100% 100%,0 100%)}@keyframes successGlitch{0%,20%,25%,41%,55%,9%,95%{transform:none;opacity:0}2%,5%,99%{transform:translate(25px,-4px) skew(4deg);opacity:1}6%,8%{transform:translate(-25px,3px) skew(-4deg);opacity:1}21%,23%,96%,97%{transform:translate(15px,-10px);opacity:1}42%,43%{transform:translate(-5px,-30px);opacity:1}45%,46%{transform:translate(10px,-30px);opacity:1}47%,48%{transform:translate(20px,-30px);opacity:1}49%,50%{transform:translate(40px,-5px);opacity:1}51%,52%{transform:translate(100px,-5px);opacity:1}53%,54%{transform:translate(10px,5px);opacity:1}}.MarkALink_logo_wrap-success .MarkALink_logo-based{animation:successSwitch 5s step-start infinite}@keyframes successSwitch{0%,100%,21%,24%,42%,54%,7%{opacity:1;transform:skew(0)}3%,5%{transform:skew(6deg)}22%,23%{transform:skew(-6deg)}43%,44%{transform:skew(5deg)}47%,49%{transform:skew(-8deg)}}@media screen and (max-width:1023px){.MarkALink_logo_wrap{-webkit-transform:scale(.5);-ms-transform:scale(.5);transform:scale(.5)}}@media screen and (max-width:480px){.MarkALink_logo_wrap{transform:scale(.3)}}
+	</style>
 
 	<script async defer data-domain="marka.link" src="https://plausible.io/js/plausible.js"></script>
 
@@ -30,48 +17,477 @@
 <body>
 	<noscript>You are going to miss some good party without JavaScript here. The website is open-source, I ain't trying to hurt your comuter in any way or track you. In fact, I'm one of the guys who stands for privacy. </br></br> Source: https://github.com/RomanistHere/MarkALink-Website</br></br></noscript>
 
-	<header class="logo_section sectionHeightWatch">
-	    <section class="logo_wrap">
-	        <div class="logo logo-based">
-	            <span class="logo__neon">Mark</span>
-	            <span class="logo__neon logo__neon-bot">ALink</span>
-	        </div>
-	        <div class="logo logo-shift">
-	            <span class="logo__neon">Mark</span>
-	            <span class="logo__neon logo__neon-bot">ALink</span>
-	        </div>
-	        <div class="logo logo-shift logo-shift-1">
-	            <span class="logo__neon">Mark</span>
-	            <span class="logo__neon logo__neon-bot">ALink</span>
-	        </div>
-	        <div class="logo logo-shift logo-shift-2">
-	            <span class="logo__neon">Mark</span>
-	            <span class="logo__neon logo__neon-bot">ALink</span>
-	        </div>
-	        <div class="logo logo-shift logo-shift-3">
-	            <span class="logo__neon">Mark</span>
-	            <span class="logo__neon logo__neon-bot">ALink</span>
-	        </div>
-	        <div class="logo logo-glitch">
-	            <div class="logo__neon">
-	                M<span class="logo-invis">a</span>rk
-	            </div>
-	            <div class="logo__neon logo__neon-bot">
-	                <span class="logo-invis">A</span>Link
-	                <span class="logo-trick">A</span>
-	            </div>
-	        </div>
-	        <div class="logo logo-glitch-shift">
-	            <div class="logo__neon">
-	                M<span class="logo-invis">a</span>rk
-	            </div>
-	            <div class="logo__neon logo__neon-bot">
-	                <span class="logo-invis">A</span>Link
-	                <span class="logo-trick">A</span>
-	            </div>
-	        </div>
-	    </section>
+	<header class="logo_section">
+		<section class="MarkALink_logo_wrap MarkALink_logo_wrap-err">
+			<div class="MarkALink_logo MarkALink_logo-based">
+				<span class="MarkALink_logo__neon">Nopage</span>
+			</div>
+			<div class="MarkALink_logo MarkALink_logo-shift">
+				<span class="MarkALink_logo__neon">Nopage</span>
+			</div>
+			<div class="MarkALink_logo MarkALink_logo-shift MarkALink_logo-shift-1">
+				<span class="MarkALink_logo__neon">Nopage</span>
+			</div>
+			<div class="MarkALink_logo MarkALink_logo-shift MarkALink_logo-shift-2">
+				<span class="MarkALink_logo__neon">Nopage</span>
+			</div>
+			<div class="MarkALink_logo MarkALink_logo-shift MarkALink_logo-shift-3">
+				<span class="MarkALink_logo__neon">Nopage</span>
+			</div>
+		</section>
 
 	</header>
+
+	<!-- <style media="screen">
+		html,
+		body {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			padding: 0;
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+
+			background-color: #131313;
+		}
+
+		@font-face {
+		    font-family: neon;
+		    src:
+		        url('../fonts/NEON.woff2') format('woff2'),
+		        url('../fonts/NEON.woff') format('woff'),
+		        url('../fonts/NEON.TTF');
+		    font-display: swap;
+		}
+
+		:root {
+		    --bg-color: #131313;
+		    --bg-color-glitch: #080808;
+
+		    --logo-col: #FED128;
+		    --logo-shadow: #FA1C16;
+		    --logo-shadow-2: #806914;
+
+		    --active-col: #44fb3a;
+		}
+
+		.logo_section {
+			width: 100%;
+			height: 100%;
+
+			display: -webkit-flex;
+			display: -ms-flex;
+			display: flex;
+			justify-content: center;
+			-ms-align-items: center;
+			align-items: center;
+		}
+
+		.MarkALink_logo__neon {
+		    position: relative;
+		    display: block;
+
+		    font-family: neon;
+		    color: #FB4264;
+		    font-size: 136px;
+		    line-height: 1;
+		    text-shadow:
+		        0 0 1vw var(--logo-shadow),
+		        0 0 3vw var(--logo-shadow),
+		        0 0 10vw var(--logo-shadow),
+		        0 0 10vw var(--logo-shadow),
+		        0 0 .4vw var(--logo-col),
+		        .5vw .5vw .1vw var(--logo-shadow-2);
+		    color: var(--logo-col);
+		}
+
+		.MarkALink_logo::selection,
+		.MarkALink_logo__neon::selection {
+		    background-color: var(--active-col);
+		}
+
+		.MarkALink_logo-trick::selection {
+		    background-color: var(--logo-shadow);
+		}
+
+		.MarkALink_logo__neon-bot {
+		    padding-left: 175px;
+		}
+
+		.MarkALink_logo-invis {
+		    opacity: 0;
+		}
+
+		.MarkALink_logo-trick {
+		    position: absolute;
+
+		    left: 26px;
+		    bottom: -18px;
+
+		    font-size: 306px;
+		}
+
+		.MarkALink_logo_wrap {
+		    position: relative;
+
+		    width: 750px;
+		    height: 272px;
+
+		    background-color: var(--bg-color);
+
+		    text-align: left;
+		}
+
+		.MarkALink_logo {
+		    position: absolute;
+
+		    top: 0;
+		    left: 0;
+		}
+
+		.MarkALink_logo-based {
+		    animation: switch1 17s step-start infinite;
+		}
+
+		@keyframes switch1 {
+		    0%,
+		    19%,
+		    20%,
+		    21%,
+		    40%,
+		    39%,
+		    42%,
+		    55%,
+		    56%,
+		    70%,
+		    95%,
+		    100% {
+		        opacity: 1;
+		        transform: skew(0deg);
+		    }
+		    20.1%,
+		    20.9%,
+		    40.1%,
+		    41.9%,
+		    70.1%,
+		    94.9% {
+		        opacity: 0;
+		    }
+		    19.5% {
+		        transform: skew(5deg);
+		    }
+		    39.5% {
+		        transform: skew(15deg);
+		    }
+		    55.5% {
+		        transform: skew(-5deg);
+		    }
+		}
+
+		.MarkALink_logo-glitch {
+		    animation: switch2 17s step-start infinite;
+		}
+
+		@keyframes switch2 {
+		    0%,
+		    20%,
+		    21%,
+		    40%,
+		    42%,
+		    70%,
+		    95%,
+		    100% {
+		        opacity: 0;
+		    }
+		    20.1%,
+		    20.9%,
+		    40.1%,
+		    41.9%,
+		    70.1%,
+		    94.9% {
+		        opacity: 1;
+		    }
+		}
+
+		.MarkALink_logo-shift {
+		    animation: shift 17s step-start infinite;
+		    clip-path: polygon(0 20%, 100% 20%, 100% 40%, 0 40%);
+		    transform: none;
+		    background: var(--bg-color-glitch);
+		}
+
+		.MarkALink_logo-shift-1 {
+		    clip-path: polygon(0 50%, 100% 50%, 100% 60%, 0 60%);
+		}
+
+		.MarkALink_logo-shift-2 {
+		    clip-path: polygon(0 0%, 100% 0%, 100% 10%, 0 10%);
+		}
+
+		.MarkALink_logo-shift-3 {
+		    clip-path: polygon(0 90%, 100% 90%, 100% 100%, 0 100%);
+		}
+
+		@keyframes shift {
+		    0%,
+		    19%,
+		    39%,
+		    69%,
+		    95%,
+		    20.1%,
+		    40.1%,
+		    55%,
+		    56%,
+		    70.1%,
+		    95.2%,
+		    96% {
+		        transform: none;
+		        opacity: 0;
+		    }
+		    20%,
+		    40%,
+		    55.2%,
+		    55.8%,
+		    70%,
+		    95.4%,
+		    95.8% {
+		        transform: translate(5px, -2px);
+		        opacity: 1;
+		    }
+		}
+
+		.MarkALink_logo-glitch-shift {
+		    animation: shift2 17s step-start infinite;
+		    clip-path: polygon(0 20%, 100% 20%, 100% 50%, 0 50%);
+		    transform: none;
+		    background: var(--bg-color-glitch);
+		}
+
+		@keyframes shift2 {
+		    0%,
+		    20.5%,
+		    21%,
+		    41.5%,
+		    42%,
+		    94.2%,
+		    95%,
+		    100% {
+		        transform: none;
+		        opacity: 0;
+		    }
+		    20.7%,
+		    20.9%,
+		    41.7%,
+		    41.9%,
+		    94.3%,
+		    94.9% {
+		        opacity: 1;
+		        transform: translate(5px, -2px);
+		    }
+		}
+
+		.MarkALink_logo_wrap-glitch .MarkALink_logo__neon {
+		    text-shadow:
+		        0 0 .8vw var(--logo-shadow),
+		        0 0 2vw var(--logo-shadow),
+		        0 0 8vw var(--logo-shadow),
+		        0 0 .3vw var(--logo-col),
+		        .5vw .5vw .1vw var(--logo-shadow-2);
+		}
+
+		.MarkALink_logo_wrap-glitch .MarkALink_logo-shift {
+		    animation: urgentGlitch .5s step-start infinite;
+		}
+
+		@keyframes urgentGlitch {
+		    0%,
+		    100% {
+		        transform: none;
+		        opacity: 0;
+		    }
+		    21%,
+		    23%,
+		    96%,
+		    97% {
+		        transform: translate(-45px, 10px);
+		        opacity: 1;
+		    }
+		}
+
+		.MarkALink_logo_wrap-success .MarkALink_logo__neon {
+		    font-size: 160px;
+
+		    --logo-shadow-2: #a1f5a1;
+		    --logo-shadow: #208c20;
+		    --logo-col: #46ff09;
+
+		    text-shadow:
+		        0 0 1vw var(--logo-shadow),
+		        0 0 3vw var(--logo-shadow),
+		        0 0 10vw var(--logo-shadow),
+		        0 0 10vw var(--logo-shadow),
+		        0 0 .4vw var(--logo-col),
+		        .5vw .5vw .1vw var(--logo-shadow-2);
+		    color: var(--logo-col);
+		}
+
+		.MarkALink_logo_wrap-err .MarkALink_logo__neon {
+		    font-size: 160px;
+		    font-size: 177px;
+
+		    --logo-shadow-2: #ff6565;
+		    --logo-shadow: #9e2121;
+		    --logo-col: #ff0909;
+
+		    text-shadow:
+		        0 0 1vw var(--logo-shadow),
+		        0 0 3vw var(--logo-shadow),
+		        0 0 10vw var(--logo-shadow),
+		        0 0 10vw var(--logo-shadow),
+		        0 0 .4vw var(--logo-col),
+		        .5vw .5vw .1vw var(--logo-shadow-2);
+		    color: var(--logo-col);
+		}
+
+		.MarkALink_logo_wrap-success .MarkALink_logo {
+		    left: -67px;
+		    right: -67px;
+		    top: 57px;
+		    width: 718px;
+		}
+
+		.MarkALink_logo_wrap-err .MarkALink_logo {
+		    width: auto;
+		    left: auto;
+		    right: auto;
+		    top: 47px;
+		}
+
+		.MarkALink_logo_wrap-success .MarkALink_logo-shift {
+		    animation: successGlitch 5s step-start infinite;
+		    clip-path: polygon(0 35%, 100% 35%, 100% 40%, 0 40%);
+		}
+
+		.MarkALink_logo_wrap-success .MarkALink_logo-shift-1 {
+		    clip-path: polygon(0 50%, 100% 50%, 100% 60%, 0 60%);
+		}
+
+		.MarkALink_logo_wrap-success .MarkALink_logo-shift-2 {
+		    clip-path: polygon(0 0%, 100% 0%, 100% 30%, 0 30%);
+		}
+
+		.MarkALink_logo_wrap-success .MarkALink_logo-shift-3 {
+		    clip-path: polygon(0 80%, 100% 80%, 100% 100%, 0 100%);
+		}
+
+		@keyframes successGlitch {
+		    0%,
+		    9%,
+		    20%,
+		    25%,
+		    41%,
+		    55%,
+		    95% {
+		        transform: none;
+		        opacity: 0;
+		    }
+		    2%,
+		    5%,
+		    99% {
+		        transform: translate(25px, -4px) skew(4deg);
+		        opacity: 1;
+		    }
+		    6%,
+		    8% {
+		        transform: translate(-25px, 3px) skew(-4deg);
+		        opacity: 1;
+		    }
+		    21%,
+		    23%,
+		    96%,
+		    97% {
+		        transform: translate(15px, -10px);
+		        opacity: 1;
+		    }
+		    42%,
+		    43% {
+		        transform: translate(-5px, -30px);
+		        opacity: 1;
+		    }
+		    45%,
+		    46% {
+		        transform: translate(10px, -30px);
+		        opacity: 1;
+		    }
+		    47%,
+		    48% {
+		        transform: translate(20px, -30px);
+		        opacity: 1;
+		    }
+		    49%,
+		    50% {
+		        transform: translate(40px, -5px);
+		        opacity: 1;
+		    }
+		    51%,
+		    52% {
+		        transform: translate(100px, -5px);
+		        opacity: 1;
+		    }
+		    53%,
+		    54% {
+		        transform: translate(10px, 5px);
+		        opacity: 1;
+		    }
+		}
+
+		.MarkALink_logo_wrap-success .MarkALink_logo-based {
+		    animation: successSwitch 5s step-start infinite;
+		}
+
+		@keyframes successSwitch {
+		    0%,
+		    7%,
+		    21%,
+		    24%,
+		    42%,
+		    54%,
+		    100% {
+		        opacity: 1;
+		        transform: skew(0deg);
+		    }
+		    3%,
+		    5% {
+		        transform: skew(6deg);
+		    }
+		    22%,
+		    23% {
+		        transform: skew(-6deg);
+		    }
+		    43%,
+		    44% {
+		        transform: skew(5deg);
+		    }
+		    47%,
+		    49% {
+		        transform: skew(-8deg);
+		    }
+		}
+
+		@media screen and (max-width: 1023px) {
+			.MarkALink_logo_wrap {
+				-webkit-transform: scale(.5);
+				-ms-transform: scale(.5);
+				transform: scale(.5);
+			}
+		}
+
+		@media screen and (max-width: 480px) {
+			.MarkALink_logo_wrap {
+				transform: scale(.3);
+			}
+		}
+	</style> -->
 </body>
 </html>

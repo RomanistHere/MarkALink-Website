@@ -184,6 +184,12 @@
 }
 
 .cases-expanded .swiper-slide-active .cases__image-glitch {
+    animation: gameSectionGlitch .5s step-end .4s;
+}
+
+.cases-expanded .cases__clip_wrap-5 .swiper-slide-active .cases__image-glitch,
+.cases-expanded .cases__clip_wrap-3 .swiper-slide-active .cases__image-glitch,
+.cases-expanded .cases__clip_wrap-5 .swiper-slide-active .cases__image-glitch {
     animation: gameSectionGlitch2 .5s step-end .4s;
 }
 

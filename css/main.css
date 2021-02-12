@@ -289,6 +289,10 @@ html, body {
     display: none;
 }
 
+.cases {
+    overflow: hidden;
+}
+
 .cases__swiper {
     display: none;
 }
