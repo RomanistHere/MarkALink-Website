@@ -1,12 +1,23 @@
 const swiper = new Swiper('.swiper-container', {
     // loop: true,
+    speed: 400,
     spaceBetween: 30,
     slidesPerView: 3,
     grabCursor: true,
     effect: 'coverflow',
     centeredSlides: true,
     slideToClickedSlide: true,
+    // initialSlide: 5,
     initialSlide: 1,
+    a11y: true,
+    // lazy
+    preloadImages: false,
+    watchSlidesVisibility: true,
+    lazy: {
+       // loadPrevNext: true,
+       // loadPrevNextAmount: 10,
+       // loadOnTransitionStart: true
+    },
 
     breakpoints: {
         // when window width is >= 320px
@@ -27,7 +38,7 @@ const swiper = new Swiper('.swiper-container', {
     },
 
     coverflowEffect: {
-		rotate: 60,
+		rotate: 50,
 		stretch: 10,
 		depth: 50,
 		modifier: 1,
@@ -37,13 +48,19 @@ const swiper = new Swiper('.swiper-container', {
     on: {
         init: () => {
             document.querySelector('.cases__swiper').classList.add('cases__swiper-show')
+            setTimeout(() => {
+                document.querySelector('.cases__swiper').classList.remove('cases__swiper-show')
+            }, 1500)
         },
         click: (swiper, event) => {
             const target = event.target
-            if (target.classList.contains('swiper-slide-active'))
+            if (target.classList.contains('swiper-slide-active')) {
                 document.querySelector('.cases').classList.add('cases-expanded')
-            else if (target.classList.contains('cases__clip_wrap'))
+                // document.querySelector('.game-unique').classList.add('game-dark')
+            } else if (target.classList.contains('cases__clip_wrap')) {
                 document.querySelector('.cases').classList.remove('cases-expanded')
+                // document.querySelector('.game-unique').classList.remove('game-dark')
+            }
         }
     },
 })

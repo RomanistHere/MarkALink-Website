@@ -111,7 +111,10 @@
     border: 1px solid var(--blue-bright);
 
     transform: perspective(1000px) translateZ(-1000px) rotateX(0deg);
-    will-change: transform;
+    will-change: auto;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+
     opacity: 0;
 }
 
@@ -151,6 +154,60 @@
         0 0 10px var(--blue-bright),
         0 0 10px var(--blue-bright),
         0 0 10px var(--blue-bright);
+}
+
+.cases__swiper-show .swiper-slide-visible {
+    transform: translateZ(-5000px);
+}
+
+.cases__image-glitch {
+    position: absolute;
+    opacity: 0;
+    z-index: 1;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.section_to_animate-animated .swiper-slide-prev .cases__image-glitch {
+    animation: gameSectionGlitch 2s step-end;
+}
+
+.section_to_animate-animated .swiper-slide-active .cases__image-glitch {
+    animation: gameSectionGlitch2 1.5s step-end .8s;
+}
+
+.section_to_animate-animated .swiper-slide-next .cases__image-glitch {
+    animation: gameSectionGlitch2 1s step-end 1.5s;
+}
+
+.cases-expanded .swiper-slide-active .cases__image-glitch {
+    animation: gameSectionGlitch2 .5s step-end .4s;
+}
+
+.cases__swiper-show .swiper-slide-active {
+    animation: slideAppear .7s ease;
+}
+
+.cases__swiper-show .swiper-slide-prev {
+    animation: slideAppear 1s ease;
+}
+
+.cases__swiper-show .swiper-slide-next {
+    animation: slideAppear 1.3s ease;
+}
+
+@keyframes slideAppear {
+    0%, 30% {
+        transform: translateZ(-5000px);
+        opacity: 0;
+    }
+    100% {
+        /* transform: none; */
+        opacity: 1;
+    }
 }
 
 @media screen and (max-height: 869px) and (min-width: 1024px) {

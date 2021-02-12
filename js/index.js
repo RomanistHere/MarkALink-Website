@@ -255,6 +255,8 @@ const animateSection = section => {
         setTimeout(() => { animateSectionMulti(section) }, 500)
     } else if (section.classList.contains('finale')) {
         setTimeout(() => { animateSectionOnce(section) }, 300)
+    } else if (section.classList.contains('cases')) {
+        setTimeout(() => { animateSectionMulti(section) }, 500)
     }
 }
 
