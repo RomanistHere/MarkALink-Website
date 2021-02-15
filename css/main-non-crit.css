@@ -22,6 +22,7 @@
     --violet-good: #9e638f;
     --about-glitch-col: blue;
     --cases-exp-col: #f743c9;
+    --blue: rgba(70, 70, 206, .7);
 
     -webkit-tap-highlight-color: transparent;
     color: var(--text-col);
@@ -117,20 +118,21 @@
     padding: 0;
 
     font-size: var(--title-fz-sec);
+    font-family: Godsownjunkyard;
+    color: var(--bg-col);
+    text-shadow: 0 0 50px red, 0 0 10px var(--violet-good), 2px 2px 2px red;
+
+    transition: var(--neon-trs-1);
 }
 
-.glitch_wrap {
-    display: inline-block;
-}
-
-.glitch_text {
-    --color1: #bb0000;
-    --color2: #f37070;
-    --color3: #ff6464;
-    --color4: #ff00cb;
+.game__text {
+    --color1: #ff0000;
+    --color2: #ff3c3c;
+    --color3: #ff2020;
+    --color4: #ffffff;
 
     color: var(--color1);
-    font-family: Godsownjunkyard;
+
     text-decoration: none;
     text-shadow:
         0 0 2px var(--color1),
@@ -170,7 +172,11 @@
     --shadow-col-1: #00a978;
 }
 
-.success .glitch_text {
+.success .game__title {
+    text-shadow: 0 0 50px var(--neon-border-col), 0 0 10px var(--violet-good), 2px 2px 2px var(--neon-border-col);
+}
+
+.success .game__text {
     --color1: #008014;
     --color2: #50cc50;
     --color3: #00b700;
@@ -194,6 +200,20 @@
     color: var(--bg-color);
 }
 
+.game__title-big {
+    --stroke-color: var(--bg-color);
+    color: var(--violet-good);
+    text-shadow:
+        0 0 5px var(--stroke-color),
+        0 0 5px var(--stroke-color),
+        0 0 5px var(--stroke-color),
+        0 0 5px var(--stroke-color),
+        0 0 5px var(--stroke-color),
+        0 0 5px var(--stroke-color),
+        0 0 15px var(--stroke-color);
+    filter: none;
+}
+
 /* .game-dark {
     background-color: var(--bg-color);
 }
@@ -203,7 +223,7 @@
     --violet-good: var(--logo-col);
 }
 
-.game-dark .glitch_text {
+.game-dark .game__text {
     text-shadow: none;
 }
 
@@ -796,6 +816,20 @@
     padding-bottom: 80px;
 }
 
+.cases:not(.cases-expanded) .cases__title {
+    --stroke-color: var(--bg-color);
+    color: var(--blue);
+    text-shadow:
+        0 0 5px var(--stroke-color),
+        0 0 5px var(--stroke-color),
+        0 0 5px var(--stroke-color),
+        0 0 5px var(--stroke-color),
+        0 0 5px var(--stroke-color),
+        0 0 5px var(--stroke-color),
+        0 0 15px var(--stroke-color);
+    filter: none;
+}
+
 .cases-expanded .title__typing {
     animation: animatedCursorPink 1.5s steps(29,end) infinite;
     border-right: solid 6px var(--cases-exp-col);
@@ -1290,6 +1324,8 @@
 
     .game__title {
         padding: 14px;
+
+        text-shadow: 0 0 25px red, 0 0 5px var(--violet-good), 1px 1px 1px red;
     }
 
     .game__field {
