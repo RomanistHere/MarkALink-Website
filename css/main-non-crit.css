@@ -2,29 +2,10 @@
     --skew-height-1: calc(100vw * 0.06993);
     --neon-trs-1: color ease .3s, text-shadow ease .2s, box-shadow ease .2s;
 
-    --title-fz: 80px;
-    --title-fz-sec: 44px;
-    --text-fz: 22px;
-    --text-lh: 37px;
-
     --game-width: 800px;
     --cell-side: 100px;
     --cell-margin: 24px;
 
-    --blue-glitch: #2fd9ea;
-    --blue-bright: #5fe6e4;
-    --violet-glitch: #62028a;
-    --violet-bright: #d579fb;
-    --pink-glitch: #8a0273;
-    --pink-glitch-dark: #84036e;
-    --aqua-glitch: #048282;
-    --green-glitch: #296b0e;
-    --violet-good: #9e638f;
-    --about-glitch-col: blue;
-    --cases-exp-col: #f743c9;
-    --blue: rgba(70, 70, 206, .7);
-
-    -webkit-tap-highlight-color: transparent;
     color: var(--text-col);
 }
 
