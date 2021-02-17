@@ -135,7 +135,7 @@ html {
     margin: -20px auto 0;
 
     /* background-color: rgba(var(--hol-col), .35); */
-    /* filter: blur(3px); */
+    filter: blur(3px);
     box-shadow:
         0 -4px 6px rgba(var(--hol-col), .5),
         0 -25px 25px rgba(var(--hol-col), .75),
@@ -214,6 +214,8 @@ html {
     left: 0;
     width: 100%;
     height: 100%;
+
+    filter: drop-shadow(0 0 20px rgb(var(--hol-col)));
 }
 
 /* // rings // */
