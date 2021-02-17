@@ -10,8 +10,21 @@ const handleClickPrev = (elem, func) => {
 const changeBrowserLinks = $All('.nav__click')
 
 changeBrowserLinks.forEach(elem => handleClickPrev(elem, (e) => {
+    const elem = e.currentTarget
+    const browser = elem.getAttribute('data-browser')
+    const currentShow = $('.item-active')
+    const nextShow = $(`.item[data-browser=${browser}]`)
+
     changeBrowserLinks.forEach(elem => elem.classList.remove('nav__click-active'))
-    e.currentTarget.classList.add('nav__click-active')
+    elem.classList.add('nav__click-active')
+
+    currentShow.classList.remove('item-active')
+    currentShow.classList.add('item-disactive')
+    nextShow.classList.add('item-active')
+
+    setTimeout(() => {
+        currentShow.classList.remove('item-disactive')
+    }, 400)
 }))
 
 const downloadLinks = $All('.list__link')

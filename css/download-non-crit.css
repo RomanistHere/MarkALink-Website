@@ -5,6 +5,7 @@ html {
     justify-content: center;
 
     height: 100vh;
+    overflow: hidden;
 
     --hol-col: 95, 230, 228;
     --icon-size: 350px;
@@ -46,15 +47,40 @@ html {
 }
 
 .list {
+    position: relative;
+
     padding-bottom: 200px;
+    margin: 0 auto;
+    height: var(--icon-size);
+    width: var(--icon-size);
 }
 
 .item {
-    position: relative;
+    position: absolute;
+
     margin: 0 auto;
+    top: 0;
+    left: 0;
 
     width: var(--icon-size);
     height: var(--icon-size);
+
+    opacity: 0;
+    transform: translateX(1000px) scale(.1);
+
+    transition: transform ease .6s, opacity ease .4s;
+}
+
+.item-active {
+    opacity: 1;
+    transform: none;
+}
+
+.item-disactive {
+    position: absolute;
+
+    opacity: 0;
+    transform: translateX(-1000px) scale(.1);
 }
 
 /* // navbar // */
@@ -106,10 +132,10 @@ html {
 
     width: 440px;
     height: 10px;
-    margin: -5px auto 0;
+    margin: -20px auto 0;
 
-    background-color: rgba(var(--hol-col), .35);
-    filter: blur(3px);
+    /* background-color: rgba(var(--hol-col), .35); */
+    /* filter: blur(3px); */
     box-shadow:
         0 -4px 6px rgba(var(--hol-col), .5),
         0 -25px 25px rgba(var(--hol-col), .75),
@@ -130,11 +156,11 @@ html {
     height: 10px;
     border-radius: 100%;
 
-    background-color: rgba(var(--hol-col), .5);
+    background-color: transparent;
     transform: perspective(100px) translateZ(0);
     animation: holographic 2s infinite ease-out;
-    filter: blur(3px);
-    transition: box-shadow ease .2s, background-color ease .2s;
+    /* filter: blur(3px); */
+    transition: box-shadow ease .2s;
     will-change: box-shadow;
 }
 
@@ -166,7 +192,7 @@ html {
 
 /* // planet // */
 
-.icon {
+.planet {
     position: absolute;
     display: block;
 
@@ -175,14 +201,19 @@ html {
     top: 0;
     left: 0;
 
-    background-image: url(../images/chromium.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    opacity: 1;
-
     animation: float 2.5s infinite;
     perspective: 900px;
     transform-style: preserve-3d;
+}
+
+.list__image {
+    position: absolute;
+    display: block;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 /* // rings // */
@@ -219,7 +250,7 @@ html {
     will-change: box-shadow;
 }
 
-.icon:hover .ring {
+.planet:hover .ring {
     border-color: var(--logo-col);
     box-shadow:
         inset 0 0 50px var(--logo-col),

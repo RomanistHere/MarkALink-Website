@@ -20,10 +20,10 @@
 	<nav class="nav">
 		<ul class="nav__list">
 			<li class="nav__item">
-				<a href="#" class="nav__click nav__click-active">Chromium</a>
+				<a href="#" class="nav__click nav__click-active" data-browser="chromium">Chromium</a>
 			</li>
 			<li class="nav__item">
-				<a href="#" class="nav__click">Edge</a>
+				<a href="#" class="nav__click" data-browser="edge">Edge</a>
 			</li>
 			<li class="nav__item">
 				<a href="#" class="nav__click">Opera</a>
@@ -41,11 +41,29 @@
 		</header>
 
 		<ul class="list">
-			<li class="item">
+			<li class="item item-active" data-browser="chromium">
 				<a
 					target="_blank" rel="noreferrer"
 					href="https://chrome.google.com/webstore/detail/markalink/jgfjphpcldeifiifdmjpjoidkdhbcboe?hl=en"
-					class="icon list__link">
+					class="planet list__link">
+					<img src="../images/chromium.png" alt="chromium" class="list__image">
+					<div class="ring_wrap">
+						<span class="ring"></span>
+						<span class="ring"></span>
+						<span class="ring"></span>
+						<span class="ring"></span>
+						<span class="ring"></span>
+						<span class="ring"></span>
+						<span class="ring"></span>
+					</div>
+				</a>
+			</li>
+			<li class="item" data-browser="edge">
+				<a
+					target="_blank" rel="noreferrer"
+					href="https://microsoftedge.microsoft.com/addons/detail/markalink/lkhhgeefhaeemmkliceeoeejahniniem"
+					class="planet list__link">
+					<img src="../images/edge.png" alt="edge" class="list__image">
 					<div class="ring_wrap">
 						<span class="ring"></span>
 						<span class="ring"></span>
