@@ -15,6 +15,7 @@ body {
     height: 100%;
 
     overflow: hidden;
+    background: url('../images/stars.png') repeat;
 }
 
 :root {
@@ -78,7 +79,6 @@ body {
     width: var(--icon-size);
     height: var(--icon-size);
 
-    opacity: 0;
     transform: translateX(1000px) scale(.1);
 
     transition: transform ease .6s, opacity ease .4s;
@@ -119,6 +119,7 @@ body {
     --color2: var(--blue-bright);
 
     font-size: var(--text-fz);
+    font-family: Godsownjunkyard;
     line-height: var(--text-lh);
     text-decoration: none;
     color: var(--color1);
@@ -151,6 +152,7 @@ body {
     width: 440px;
     height: 10px;
 
+    -webkit-filter: blur(3px);
     filter: blur(3px);
     box-shadow:
         0 -4px 6px rgba(var(--hol-col), .5),
@@ -233,6 +235,7 @@ body {
     width: 100%;
     height: 100%;
 
+    -webkit-filter: drop-shadow(0 0 20px rgb(var(--hol-col)));
     filter: drop-shadow(0 0 20px rgb(var(--hol-col)));
 }
 
@@ -384,6 +387,7 @@ body {
     width: 160px;
     height: 110px;
 
+    -webkit-filter: drop-shadow(0 0 5px var(--color2));
     filter: drop-shadow(0 0 5px var(--color2));
 }
 
@@ -401,7 +405,7 @@ body {
 
     -webkit-clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
     clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
-    background-color: var(--logo-col);
+    background-color: var(--color1);
 }
 
 .exit__wrap {
@@ -504,9 +508,9 @@ body {
 
 @media screen and (max-width: 1024px) {
     :root {
-        --title-fz: 40px;
-        --text-fz: 24px;
-        --text-lh: 1.7;
+        --title-fz: 44px;
+        --text-fz: 28px;
+        --text-lh: 1.9;
         --icon-size: 250px;
     }
 
@@ -528,13 +532,59 @@ body {
     .exit__text {
         font-size: 30px;
     }
+
+    .ring:nth-child(1) {
+        transform: rotateX(70deg) scale(2.5);
+    }
+
+    .ring:nth-child(2) {
+        transform: rotateX(70deg) scale(2.3);
+        border-style: solid;
+    }
+
+    .ring:nth-child(3) {
+        transform: rotateX(70deg) scale(2.1);
+        border-style: dashed;
+    }
+
+    .ring:nth-child(4) {
+        transform: rotateX(70deg) scale(1.9);
+    }
+
+    .ring:nth-child(5) {
+        transform: rotateX(70deg) scale(1.7);
+        border-style: dashed;
+    }
+
+    .ring:nth-child(6) {
+        transform: rotateX(70deg) scale(1.5);
+        border-style: solid;
+    }
+
+    .ring:nth-child(7) {
+        transform: rotateX(70deg) scale(1.3);
+    }
+
+    .ring_wrap-type2 .ring:nth-child(1) {
+        transform: rotateX(75deg) scale(1.3);
+    }
+
+    .ring_wrap-type2 .ring:nth-child(2) {
+        transform: rotateX(75deg) scale(1.5);
+        border-style: dashed;
+    }
+
+    .ring_wrap-type2 .ring:nth-child(3) {
+        transform: rotateX(75deg) scale(1.7);
+        border-style: dotted;
+    }
 }
 
 @media screen and (max-width: 767px) {
     :root {
-        --title-fz: 24px;
-        --text-fz: 18px;
-        --text-lh: 1.8;
+        --title-fz: 30px;
+        --text-fz: 20px;
+        --text-lh: 2;
         --icon-size: 120px;
     }
 

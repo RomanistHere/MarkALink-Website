@@ -66,6 +66,7 @@
         0 0 10px var(--color1),
         0 0 20px var(--color2),
         0 0 40px var(--color3);
+    -webkit-filter: saturate(60%);
     filter: saturate(60%);
 }
 
@@ -192,6 +193,7 @@
         0 0 5px var(--stroke-color),
         0 0 5px var(--stroke-color),
         0 0 15px var(--stroke-color);
+    -webkit-filter: none;
     filter: none;
 }
 
@@ -406,6 +408,7 @@
 .game__cell_wrap {
     display: inline-block;
 
+    -webkit-filter: drop-shadow(0 0 10px var(--bg-color));
     filter: drop-shadow(0 0 10px var(--bg-color));
     transition: opacity ease .3s, filter ease .3s, background-color ease .3s;
     cursor: pointer;
@@ -414,6 +417,7 @@
 @media (hover: hover) {
     .game__cell_wrap:hover,
     .game__cell_wrap-hover {
+        -webkit-filter: drop-shadow(0 0 22px var(--bg-color));
         filter: drop-shadow(0 0 22px var(--bg-color));
     }
 
@@ -808,6 +812,7 @@
         0 0 5px var(--stroke-color),
         0 0 5px var(--stroke-color),
         0 0 15px var(--stroke-color);
+    -webkit-filter: none;
     filter: none;
 }
 
@@ -852,6 +857,7 @@
             0 0 30px var(--color2),
             0 0 60px var(--color3),
             0 0 80px var(--color3);
+        -webkit-filter: none;
         filter: none;
     }
     70%, 90%, 100% {
@@ -859,6 +865,7 @@
             0 0 10px var(--color1),
             0 0 20px var(--color2),
             0 0 40px var(--color3);
+        -webkit-filter: saturate(60%);
         filter: saturate(60%);
     }
 }
@@ -1341,7 +1348,7 @@
 
     .finale__skewed {
         padding: 5px 10px;
-        
+
         text-align: right;
         font-size: 14px;
     }
