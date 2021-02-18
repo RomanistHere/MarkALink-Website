@@ -29,6 +29,21 @@ const easeInOutQuad = (t, b, c, d) => {
     return -c/2 * (t*(t-2) - 1) + b;
 }
 
+const browser = (function() {
+    const test = function(regexp) {return regexp.test(window.navigator.userAgent)}
+    switch (true) {
+        case test(/edg/i): return "Microsoft Edge";
+        case test(/trident/i): return "Microsoft Internet Explorer";
+        case test(/firefox|fxios/i): return "Mozilla Firefox";
+        case test(/opr\//i): return "Opera";
+        case test(/ucbrowser/i): return "UC Browser";
+        case test(/samsungbrowser/i): return "Samsung Browser";
+        case test(/chrome|chromium|crios/i): return "Google Chrome";
+        case test(/safari/i): return "Apple Safari";
+        default: return "Other";
+    }
+})();
+
 let state = {
     gameAnimDelay: false,
     gameAnimDelayTime: 3500,
@@ -41,6 +56,7 @@ let state = {
     casesRef: null,
     plansRef: null,
     shouldRetype: true,
+    isWeakBrowser: browser === 'Apple Safari',
 }
 const gameToggleBtn = $('.gameToggleBtn')
 const gameSection = $('.game-unique')
@@ -48,6 +64,10 @@ const toggleText = $All('.glitch_base')
 const gameCellsUniq = $All('.game__field-unique .game__cell_wrap')
 const gameTyping = $All('.gameTyping')
 const aboutTyping = $All('.aboutTyping')
+
+// if (state.isWeakBrowser) {
+//     $All('.glitch_hover_text-pseudo').forEach(elem => elem.remove())
+// }
 
 const handleGameToggleClick = () => {
     const toggleNewText = state.markALinkTogglerText ? 'OFF' : 'ON'
@@ -147,7 +167,7 @@ const initGame = () => {
 initGame()
 
 const initTyping = (elems, txt = '', timeoutRef, shouldRetype = state.shouldRetype) => {
-    if (!shouldRetype && Boolean(state[timeoutRef]))
+    if ((!shouldRetype && Boolean(state[timeoutRef])) || state.isWeakBrowser)
         return
 
     const speed = 100
