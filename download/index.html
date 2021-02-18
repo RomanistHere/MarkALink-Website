@@ -3,9 +3,22 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" type="image/png" href="../logo32.png"/>
+	<meta name="Description" content="Download MarkALink. Non-commercial and open-source cyberpunk browser extension by Romanisthere. Bookmark experience from the future. Prevent search results you didn't like from being ever shown in the web! Make other links visible!">
+	<meta name="keywords" content="Download, Cyberpunk, Non-commerical, Open-source, Roman Smunyov, RomanistHere, PopUpoff, independent, MarkALink, private notes, link notes, notes">
+
+	<meta property="og:title" content="MarkALink" />
+	<meta property="og:type" content="product" />
+	<meta property="og:image" content="../images/920x680png.png" />
+	<meta property="og:url" content="https://marka.link" />
+	<meta property="og:description" content="Download MarkALink. Non-commercial and open-source extension by Romanisthere. Prevent search results you didn't like from being ever shown in the web! Make the links you want always visible!"/>
+
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content="https://marka.link/images/920x680png.png" />
+	<meta name="twitter:image:src" content="https://marka.link/images/920x680png.png" />
 
 	<script async defer data-domain="marka.link" src="https://plausible.io/js/plausible.js"></script>
+
+	<link rel="preload" href="../fonts/Godsownjunkyard-Regular.woff2" as="font" type="font/woff2" crossorigin>
 
 	<link rel="stylesheet" href="../css/main.css">
 	<link rel="stylesheet" href="../css/download-non-crit.css" media="print" onload="this.media='all'">
@@ -17,28 +30,28 @@
 <body>
 	<noscript>You are going to miss some good party without JavaScript here. The website is open-source, I ain't trying to hurt your comuter in any way or track you. In fact, I'm one of the guys who stands for privacy. </br></br> Source: https://github.com/RomanistHere/MarkALink-Website</br></br></noscript>
 
-	<nav class="nav">
-		<ul class="nav__list">
-			<li class="nav__item">
-				<a href="#" class="nav__click nav__click-active" data-browser="chromium">Chromium</a>
-			</li>
-			<li class="nav__item">
-				<a href="#" class="nav__click" data-browser="edge">Edge</a>
-			</li>
-			<li class="nav__item">
-				<a href="#" class="nav__click">Opera</a>
-			</li>
-			<li class="nav__item">
-				<a href="#" class="nav__click">Firefox</a>
-			</li>
-		</ul>
-	</nav>
-
 	<section class="section">
 		<header class="header">
 			<h1 class="title">Download</h1>
 			<div class="holograph"></div>
 		</header>
+
+		<nav class="nav">
+			<ul class="nav__list">
+				<li class="nav__item">
+					<a href="#" class="nav__click nav__click-active" data-browser="chromium">Chromium</a>
+				</li>
+				<li class="nav__item">
+					<a href="#" class="nav__click" data-browser="edge">Edge</a>
+				</li>
+				<li class="nav__item">
+					<a href="#" class="nav__click" data-browser="opera">Opera</a>
+				</li>
+				<li class="nav__item">
+					<a href="#" class="nav__click" data-browser="firefox">Firefox</a>
+				</li>
+			</ul>
+		</nav>
 
 		<ul class="list">
 			<li class="item item-active" data-browser="chromium">
@@ -46,7 +59,7 @@
 					target="_blank" rel="noreferrer"
 					href="https://chrome.google.com/webstore/detail/markalink/jgfjphpcldeifiifdmjpjoidkdhbcboe?hl=en"
 					class="planet list__link">
-					<img src="../images/chromium.png" alt="chromium" class="list__image">
+					<img src="../images/chromium.png" alt="chromium" class="list__image" width="350" height="350">
 					<div class="ring_wrap">
 						<span class="ring"></span>
 						<span class="ring"></span>
@@ -63,20 +76,34 @@
 					target="_blank" rel="noreferrer"
 					href="https://microsoftedge.microsoft.com/addons/detail/markalink/lkhhgeefhaeemmkliceeoeejahniniem"
 					class="planet list__link">
-					<img src="../images/edge.png" alt="edge" class="list__image">
-					<div class="ring_wrap">
-						<span class="ring"></span>
-						<span class="ring"></span>
-						<span class="ring"></span>
-						<span class="ring"></span>
+					<img src="../images/edge.png" alt="edge" class="list__image" width="350" height="350">
+					<div class="ring_wrap ring_wrap-type2">
 						<span class="ring"></span>
 						<span class="ring"></span>
 						<span class="ring"></span>
 					</div>
 				</a>
 			</li>
+			<li class="item" data-browser="opera">
+				<div class="placeholder planet list__link">
+					<p class="placeholder__text">Coming :)</p>
+				</div>
+			</li>
+			<li class="item" data-browser="firefox">
+				<div class="placeholder planet list__link">
+					<p class="placeholder__text">Soon!</p>
+				</div>
+			</li>
 		</ul>
 	</section>
+
+	<div class="exit__outer">
+		<a href="https://marka.link" class="exit">
+			<div class="exit__wrap">
+				<span class="exit__text">Exit</span>
+			</div>
+		</a>
+	</div>
 
 </body>
 </html>
