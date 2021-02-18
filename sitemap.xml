@@ -7,4 +7,5 @@
     xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
     xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
     <url> <loc>https://marka.link</loc> </url>
+    <url> <loc>https://marka.link/download</loc> </url>
 </urlset>

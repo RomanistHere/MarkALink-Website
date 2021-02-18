@@ -1340,8 +1340,14 @@
     }
 
     .finale__skewed {
+        padding: 5px 10px;
+        
         text-align: right;
         font-size: 14px;
+    }
+
+    .finale__skewed-first {
+        text-align: left;
     }
 }
 
