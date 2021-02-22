@@ -26,6 +26,21 @@
     height: auto;
 }
 
+.parralax {
+    position: fixed;
+    z-index: 1;
+
+    background-image: url('../images/stars.png'), url('../images/Galaxy1.png'), url('../images/Galaxy4.png');
+    background-position: left top, 80px 150px, right 400px bottom 100px;
+    background-repeat: repeat, no-repeat, no-repeat;
+    background-size: cover, 300px 300px, 400px 300px;
+
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
 .skewed {
     position: absolute;
     z-index: 1;
@@ -36,7 +51,7 @@
     width: 100%;
     height: var(--skew-height-1);
 
-    background: var(--bg-color);
+    background-color: var(--bg-color);
 
     transform: skewY(4deg);
     transform-origin: top right;
@@ -56,6 +71,9 @@
 }
 
 .title {
+    position: relative;
+    z-index: 2;
+
     padding: calc(var(--skew-height-1) - 20px) 0 50px;
     margin: 0;
 
@@ -95,7 +113,42 @@
         0 0 .4vw var(--logo-col);
 }
 
+/* // game // */
+
+.game {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+
+    text-align: center;
+    overflow: hidden;
+
+    background-color: var(--logo-col);
+    color: var(--bg-color);
+}
+
+.game__title-big {
+    --stroke-color: var(--bg-color);
+    color: var(--violet-good);
+    text-shadow:
+        0 0 5px var(--stroke-color),
+        0 0 5px var(--stroke-color),
+        0 0 5px var(--stroke-color),
+        0 0 5px var(--stroke-color),
+        0 0 5px var(--stroke-color),
+        0 0 5px var(--stroke-color),
+        0 0 15px var(--stroke-color);
+    -webkit-filter: none;
+    filter: none;
+}
+
 .game__title {
+    position: relative;
+    z-index: 2;
+
     display: inline-block;
     padding: 0;
 
@@ -163,38 +216,6 @@
     --color2: #50cc50;
     --color3: #00b700;
     --color4: #00a978;
-}
-
-/* // game // */
-
-.game {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    height: 100vh;
-
-    text-align: center;
-    overflow: hidden;
-
-    background-color: var(--logo-col);
-    color: var(--bg-color);
-}
-
-.game__title-big {
-    --stroke-color: var(--bg-color);
-    color: var(--violet-good);
-    text-shadow:
-        0 0 5px var(--stroke-color),
-        0 0 5px var(--stroke-color),
-        0 0 5px var(--stroke-color),
-        0 0 5px var(--stroke-color),
-        0 0 5px var(--stroke-color),
-        0 0 5px var(--stroke-color),
-        0 0 15px var(--stroke-color);
-    -webkit-filter: none;
-    filter: none;
 }
 
 /* .game-dark {
@@ -394,6 +415,9 @@
 }
 
 .game__field {
+    position: relative;
+    z-index: 2;
+
     margin: 80px auto 150px;
     width: var(--game-width);
 }
@@ -516,6 +540,9 @@
 }
 
 .about__wrap {
+    position: relative;
+    z-index: 2;
+
     width: 730px;
     margin: 0 auto;
     padding-bottom: 80px;
@@ -896,6 +923,11 @@
     align-items: center;
 
     height: 100vh;
+}
+
+.plans__wrap {
+    position: relative;
+    z-index: 2;
 }
 
 .plans__title {
