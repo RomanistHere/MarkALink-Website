@@ -57,17 +57,33 @@ let state = {
     plansRef: null,
     shouldRetype: true,
     isWeakBrowser: browser === 'Apple Safari',
+    isMusicStarted: false,
 }
 const gameToggleBtn = $('.gameToggleBtn')
 const gameSection = $('.game-unique')
-const toggleText = $All('.glitch_base')
+const toggleText = $All('.game__text')
 const gameCellsUniq = $All('.game__field-unique .game__cell_wrap')
 const gameTyping = $All('.gameTyping')
 const aboutTyping = $All('.aboutTyping')
+const audio = document.querySelector("audio")
 
 // if (state.isWeakBrowser) {
 //     $All('.glitch_hover_text-pseudo').forEach(elem => elem.remove())
 // }
+
+const startMusic = () => {
+    if (state.isMusicStarted)
+        return
+
+    const audioPlayPromise = audio.play()
+    if (audioPlayPromise !== undefined) {
+        audioPlayPromise.then(() => {
+            state = { ...state, isMusicStarted: true }
+        }).catch(e => {
+            // console.log(e)
+        })
+    }
+}
 
 const handleGameToggleClick = () => {
     const toggleNewText = state.markALinkTogglerText ? 'OFF' : 'ON'
@@ -156,6 +172,7 @@ const cellClick = e => {
     } else {
         wrongAnswer(dataIndex)
     }
+    startMusic()
 }
 
 const initGame = () => {
@@ -345,6 +362,7 @@ const watchForSections = () => {
     }
 
     window.addEventListener('scroll', () => {
+        startMusic()
         if (scrollTimer !== null) {
             clearTimeout(scrollTimer)
         }
@@ -359,6 +377,7 @@ const watchForSections = () => {
 }
 
 const watchFullScreen = () => {
+    startMusic()
     window.addEventListener('resize', () => {
         var maxHeight = window.screen.height,
             maxWidth = window.screen.width,
@@ -390,6 +409,7 @@ const initClickOnLogo = () => {
     }
 
     handleClickPrev(logo, () => {
+        startMusic()
         if (!isFullscreen()) {
             if (doc.requestFullscreen)
                 doc.requestFullscreen()

@@ -61,6 +61,12 @@ const swiper = new Swiper('.swiper-container', {
                 document.querySelector('.cases').classList.remove('cases-expanded')
                 // document.querySelector('.game-unique').classList.remove('game-dark')
             }
+
+            try {
+                startMusic()
+            } catch (e) {
+                // not loaded
+            }
         }
     },
 })

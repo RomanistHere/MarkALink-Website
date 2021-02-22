@@ -134,6 +134,11 @@
         0 0 .4vw var(--logo-col);
 }
 
+.textures {
+    background-image: url('../images/textures3.png');
+    background-size: 20% auto;
+}
+
 /* // game // */
 
 .game {
@@ -837,10 +842,11 @@
 
     color: var(--bg-color);
 
-    transition: background-color ease .1s;
+    transition: background ease .1s;
 }
 
 .cases-expanded {
+    background-image: none;
     background-color: var(--bg-color);
 }
 
@@ -962,9 +968,6 @@
 /* // finale section // */
 
 .finale {
-    position: relative;
-    z-index: 2;
-
     padding-top: var(--skew-height-1);
     height: var(--skew-height-1);
 
@@ -981,6 +984,7 @@
 }
 
 .finale__skewed {
+    z-index: 2;
     height: calc(var(--skew-height-1) * 2);
     top: 0;
     padding: 20px 40px;
@@ -1171,20 +1175,21 @@
     bottom: 0;
 
     background-color: inherit;
+    background-size: 20% auto;
 }
 
 .finale__skewed-second::before {
     left: -100%;
     right: 99%;
 
-    background: linear-gradient(90deg, rgba(19,19,19,1) 0%, rgba(254,209,40,1) 100%);
+    background: url('../images/textures3.png'), linear-gradient(90deg, rgba(19,19,19,1) 0%, rgba(254,209,40,1) 100%);
 }
 
 .finale__skewed-first::after {
     right: -100%;
     left: 99%;
 
-    background: linear-gradient(90deg, rgba(95,230,228,1) 0%, rgba(19,19,19,1) 100%);
+    background: url('../images/textures3.png'), linear-gradient(90deg, rgba(95,230,228,1) 0%, rgba(19,19,19,1) 100%);
 }
 
 /* // MEDIA QUERIES // */
