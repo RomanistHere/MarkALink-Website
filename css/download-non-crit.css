@@ -15,7 +15,30 @@ body {
     height: 100%;
 
     overflow: hidden;
-    background: url('../images/stars.png') repeat;
+    background-image: url('../images/stars.png'), url('../images/Galaxy4.png');
+    background-position: left top, right 300px bottom 20px;
+    background-repeat: repeat, no-repeat;
+    background-size: cover, 400px 300px;
+}
+
+.galaxy {
+    position: absolute;
+
+    background-image: url('../images/Galaxy1.png');
+    background-size: cover;
+
+    top: 140px;
+    left: 200px;
+    width: 300px;
+    height: 300px;
+
+    animation: galaxyRotate 200s linear infinite;
+}
+
+@keyframes galaxyRotate {
+    to {
+        transform: rotateZ(360deg);
+    }
 }
 
 :root {
@@ -498,6 +521,16 @@ body {
         --icon-size: 200px;
     }
 
+    body {
+        background-position: left top, right 200px bottom 100px;
+        background-size: cover, 200px 150px;
+    }
+
+    .galaxy {
+        width: 250px;
+        height: 250px;
+    }
+
     .holograph {
         width: calc(50px + var(--icon-size));
     }
@@ -520,6 +553,18 @@ body {
         --text-fz: 28px;
         --text-lh: 1.9;
         --icon-size: 250px;
+    }
+
+    body {
+        background-position: left top, right 5% bottom 10px;
+        background-size: cover, 300px 220px;
+    }
+
+    .galaxy {
+        top: 80px;
+        left: 50px;
+        width: 200px;
+        height: 200px;
     }
 
     .nav {
@@ -594,6 +639,18 @@ body {
         --text-fz: 20px;
         --text-lh: 2;
         --icon-size: 120px;
+    }
+
+    body {
+        background-position: left top, right 10px bottom 100px;
+        background-size: cover, 100px 80px;
+    }
+
+    .galaxy {
+        top: 30px;
+        left: 10px;
+        width: 150px;
+        height: 150px;
     }
 
     .nav {

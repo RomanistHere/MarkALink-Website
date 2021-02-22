@@ -30,15 +30,36 @@
     position: fixed;
     z-index: 1;
 
-    background-image: url('../images/stars.png'), url('../images/Galaxy1.png'), url('../images/Galaxy4.png');
-    background-position: left top, 80px 150px, right 400px bottom 100px;
-    background-repeat: repeat, no-repeat, no-repeat;
-    background-size: cover, 300px 300px, 400px 300px;
+    background-image: url('../images/stars.png'), url('../images/Galaxy4.png');
+    background-position: left top, right 400px bottom 100px;
+    background-repeat: repeat, no-repeat;
+    background-size: cover, 400px 300px;
 
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
+}
+
+.parralax::before {
+    position: absolute;
+    content: '';
+
+    background-image: url('../images/Galaxy1.png');
+    background-size: cover;
+
+    top: 80px;
+    left: 100px;
+    width: 300px;
+    height: 300px;
+
+    animation: galaxyRotate 200s linear infinite;
+}
+
+@keyframes galaxyRotate {
+    to {
+        transform: rotateZ(360deg);
+    }
 }
 
 .skewed {
@@ -942,6 +963,7 @@
 
 .finale {
     position: relative;
+    z-index: 2;
 
     padding-top: var(--skew-height-1);
     height: var(--skew-height-1);
@@ -1235,6 +1257,16 @@
         --cell-margin: 16px;
     }
 
+    .parralax {
+        background-position: left top, right 200px bottom 100px;
+        background-size: cover, 200px 150px;
+    }
+
+    .parralax::before {
+        width: 250px;
+        height: 250px;
+    }
+
     .logo_wrap {
         transform: scale(.77);
     }
@@ -1283,6 +1315,18 @@
         --cell-margin: 20px;
     }
 
+    .parralax {
+        background-position: left top, right 10% bottom 100px;
+        background-size: cover, 200px 150px;
+    }
+
+    .parralax::before {
+        top: 80px;
+        left: 50px;
+        width: 200px;
+        height: 200px;
+    }
+
     .logo_wrap {
         transform: none;
         animation: logoAppear 1s ease;
@@ -1324,6 +1368,18 @@
         --game-width: 100%;
         --cell-side: 60px;
         --cell-margin: 20px;
+    }
+
+    .parralax {
+        background-position: left top, right 10px bottom 100px;
+        background-size: cover, 100px 80px;
+    }
+
+    .parralax::before {
+        top: 30px;
+        left: 10px;
+        width: 150px;
+        height: 150px;
     }
 
     .logo_section {
