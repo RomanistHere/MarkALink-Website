@@ -316,3 +316,12 @@ html, body {
 .cases__swiper {
     display: none;
 }
+
+.logo_section-transparent {
+    z-index: unset;
+}
+
+.logo_section-transparent .logo_wrap {
+    z-index: 3;
+    background: none;
+}

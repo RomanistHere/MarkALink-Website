@@ -58,6 +58,7 @@ let state = {
     shouldRetype: true,
     isWeakBrowser: browser === 'Apple Safari',
     isMusicStarted: false,
+    isMusicPlaying: false,
 }
 const gameToggleBtn = $('.gameToggleBtn')
 const gameSection = $('.game-unique')
@@ -65,7 +66,9 @@ const toggleText = $All('.game__text')
 const gameCellsUniq = $All('.game__field-unique .game__cell_wrap')
 const gameTyping = $All('.gameTyping')
 const aboutTyping = $All('.aboutTyping')
-const audio = document.querySelector("audio")
+// audio
+const audio = $("audio")
+const audioBtn = $('.audio_controls')
 
 // if (state.isWeakBrowser) {
 //     $All('.glitch_hover_text-pseudo').forEach(elem => elem.remove())
@@ -78,11 +81,29 @@ const startMusic = () => {
     const audioPlayPromise = audio.play()
     if (audioPlayPromise !== undefined) {
         audioPlayPromise.then(() => {
-            state = { ...state, isMusicStarted: true }
+            state = { ...state, isMusicStarted: true, isMusicPlaying: true }
+            $('.logo_section').classList.add('logo_section-transparent')
+            audioBtn.classList.add('audio_controls-pause', 'audio_controls-active')
+            setTimeout(() => { audioBtn.classList.remove('audio_controls-active') }, 1000)
         }).catch(e => {
             // console.log(e)
         })
     }
+}
+
+const toggleMusic = () => {
+    if (state.isMusicPlaying) {
+        audio.pause()
+    } else {
+        audio.play()
+    }
+    state = { ...state, isMusicPlaying: !state.isMusicPlaying }
+    audioBtn.classList.toggle('audio_controls-pause')
+}
+
+const handleMusic = () => {
+    audioBtn.classList.remove('audio_controls-active')
+    handleClickPrev(audioBtn, toggleMusic)
 }
 
 const handleGameToggleClick = () => {
@@ -362,7 +383,6 @@ const watchForSections = () => {
     }
 
     window.addEventListener('scroll', () => {
-        startMusic()
         if (scrollTimer !== null) {
             clearTimeout(scrollTimer)
         }
@@ -436,6 +456,8 @@ const initPassiveInteractive = () => {
     watchFullScreen()
 
     initClickOnLogo()
+
+    handleMusic()
 
     setTimeout(() => {
         state = { ...state, shouldRetype: false }
