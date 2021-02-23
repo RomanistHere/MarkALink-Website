@@ -259,7 +259,7 @@ const animateOnStart = () => {
     if (!scrollToElem)
         return
 
-    const scrollToDist = scrollToElem.getBoundingClientRect().top
+    const scrollToDist = window.pageYOffset + scrollToElem.getBoundingClientRect().top
     customScrollTo(scrollToDist, Math.floor(scrollToDist / 2))
 }
 

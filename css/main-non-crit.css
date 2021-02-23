@@ -36,6 +36,7 @@
     top: 20px;
     right: 20px;
 
+    -webkit-filter: drop-shadow(0 0 5px var(--logo-shadow));
     filter: drop-shadow(0 0 5px var(--logo-shadow));
 }
 
@@ -50,8 +51,9 @@
 
     background-color: var(--logo-col);
     box-shadow: inset 0 0 15px var(--logo-shadow);
+    -webkit-clip-path: polygon(20% 0%, 74% 41%, 74% 63%, 20% 100%, 20% 76%, 29% 72%, 29% 26%, 21% 19%);
     clip-path: polygon(20% 0%, 74% 41%, 74% 63%, 20% 100%, 20% 76%, 29% 72%, 29% 26%, 21% 19%);
-    transition: transform ease .6s 4s;
+    transition: transform ease .6s 5s;
 }
 
 .audio_controls:hover .audio_control,
@@ -61,6 +63,7 @@
 }
 
 .audio_controls-pause .audio_control {
+    -webkit-clip-path: polygon(18% 100%, 17% 0%, 31% 0, 40% 48%, 33% 100%, 54% 100%, 54% 1%, 71% 0, 76% 29%, 67% 40%, 75% 66%, 70% 100%);
     clip-path: polygon(18% 100%, 17% 0%, 31% 0, 40% 48%, 33% 100%, 54% 100%, 54% 1%, 71% 0, 76% 29%, 67% 40%, 75% 66%, 70% 100%);
 }
 

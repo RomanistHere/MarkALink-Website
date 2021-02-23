@@ -58,6 +58,11 @@ html, body {
     -webkit-tap-highlight-color: transparent;
 }
 
+.parralax {
+    content-visibility: auto;
+    contain-intrinsic-size: 1000px;
+}
+
 .section_to_animate {
     height: 100vh;
 }
