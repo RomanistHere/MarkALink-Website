@@ -82,7 +82,9 @@ const startMusic = () => {
     if (audioPlayPromise !== undefined) {
         audioPlayPromise.then(() => {
             state = { ...state, isMusicStarted: true, isMusicPlaying: true }
+
             $('.logo_section').classList.add('logo_section-transparent')
+            $('.finale__special').classList.remove('finale__special-disabled')
             audioBtn.classList.add('audio_controls-pause', 'audio_controls-active')
             setTimeout(() => { audioBtn.classList.remove('audio_controls-active') }, 1000)
         }).catch(e => {
@@ -96,6 +98,7 @@ const toggleMusic = () => {
         audio.pause()
     } else {
         audio.play()
+        $('.finale__special').classList.remove('finale__special-disabled')
     }
     state = { ...state, isMusicPlaying: !state.isMusicPlaying }
     audioBtn.classList.toggle('audio_controls-pause')

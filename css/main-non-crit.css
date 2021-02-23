@@ -225,6 +225,7 @@
     text-shadow: 0 0 50px red, 0 0 10px var(--violet-good), 2px 2px 2px red;
 
     transition: var(--neon-trs-1);
+    cursor: pointer;
 }
 
 .game__text {
@@ -267,6 +268,20 @@
         inset 0 0 2px var(--neon-border-col);
 
     transition: var(--neon-trs-1);
+}
+
+.neon_border:hover {
+    box-shadow:
+        0 0 2px var(--neon-border-col),
+        0 0 5px var(--neon-border-col),
+        0 0 10px var(--neon-border-col),
+        0 0 20px var(--neon-border-col),
+        0 0 2px var(--neon-border-col),
+        inset 0 0 2px var(--neon-border-col),
+        inset 0 0 5px var(--neon-border-col),
+        inset 0 0 20px var(--neon-border-col),
+        inset 0 0 10px var(--shadow-col-1),
+        inset 0 0 2px var(--neon-border-col);
 }
 
 .success .neon_border {
@@ -1016,6 +1031,10 @@
     font-size: var(--text-fz);
 
     overflow: hidden;
+}
+
+.finale__special-disabled {
+    display: none;
 }
 
 .finale__song {
