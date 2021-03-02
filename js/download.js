@@ -32,6 +32,10 @@ const header = $('.header')
 
 downloadLinks.forEach(elem => {
     elem.addEventListener('mouseenter', e => {
+        const width  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
+        if (width <= 1024)
+            return
+
         header.classList.add('header-download')
     })
     elem.addEventListener('mouseleave', e => {

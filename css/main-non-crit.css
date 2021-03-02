@@ -512,6 +512,7 @@
 /* // cells // */
 
 .game__cell_wrap {
+    position: relative;
     display: inline-block;
 
     -webkit-filter: drop-shadow(0 0 10px var(--bg-color));
@@ -520,11 +521,25 @@
     cursor: pointer;
 }
 
+.game__cell_wrap::after {
+    content: '';
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    opacity: 0;
+    background-color: #000;
+
+    transition: opacity .1s ease;
+}
+
 @media (hover: hover) {
-    .game__cell_wrap:hover,
-    .game__cell_wrap-hover {
-        -webkit-filter: drop-shadow(0 0 22px var(--bg-color));
-        filter: drop-shadow(0 0 22px var(--bg-color));
+    .game__cell_wrap:hover::after,
+    .game__cell_wrap-hover::after {
+        opacity: .05;
     }
 
     .game__cell_wrap:hover .game__cell,
