@@ -1271,6 +1271,27 @@
     background: url('../images/textures3.png'), linear-gradient(90deg, rgba(95,230,228,1) 0%, rgba(19,19,19,1) 100%);
 }
 
+/* // goals // */
+
+.section__title {
+    font-size: 100%;
+}
+
+.section_p {
+    margin-bottom: 1em;
+}
+
+.section_end {
+    font-style: italic;
+    text-align: right;
+    font-size: 80%;
+}
+
+.about__highlight-dif {
+    --logo-col: #86e5ef;
+    --logo-shadow: var(--blue-bright);
+}
+
 /* // MEDIA QUERIES // */
 
 @media screen and (min-width: 1920px) {
