@@ -58,6 +58,6 @@ const browser = (function() {
     }
 })();
 
-if (browser === "Mozilla Firefox") {
+if (browser === "Mozilla Firefox" || browser === "Apple Safari") {
     $('.section').classList.add('weakPerf')
 }
