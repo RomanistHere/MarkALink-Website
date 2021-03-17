@@ -3,14 +3,14 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="Description" content="Non-commercial and open-source cyberpunk browser extension by Romanisthere. Bookmark experience from the future. Prevent search results you didn't like from being ever shown in the web! Make other links visible!">
+	<meta name="Description" content="Non-commercial and open-source browser extension by Romanisthere. Highlight interesting links. Hide irrelevant ones. Remove whole websites from search results. Cyberpunk! An upgraded bookmark experience.">
 	<meta name="keywords" content="Cyberpunk, Non-commerical, Open-source, Roman Smunyov, RomanistHere, PopUpoff, independent, MarkALink, private notes, link notes, notes">
 
 	<meta property="og:title" content="MarkALink" />
 	<meta property="og:type" content="product" />
 	<meta property="og:image" content="images/920x680png.png" />
 	<meta property="og:url" content="https://marka.link" />
-	<meta property="og:description" content="Non-commercial and open-source extension by Romanisthere. Prevent search results you didn't like from being ever shown in the web! Make the links you want always visible!"/>
+	<meta property="og:description" content="Non-commercial and open-source extension by Romanisthere. Highlight interesting links. Hide irrelevant ones. Remove whole websites from search results. Cyberpunk! An upgraded bookmark experience."/>
 
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:image" content="https://marka.link/images/920x680png.png" />
@@ -21,8 +21,6 @@
 	<link rel="preload" href="fonts/NEON.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="preload" href="fonts/Godsownjunkyard-Regular.woff2" as="font" type="font/woff2" crossorigin>
 
-	<!-- <link rel="stylesheet" href="css/main.css"> -->
-	<!-- <link rel="stylesheet" href="css/main-non-crit.css"> -->
 	<style type="text/css">
 		@font-face{font-family:neon;src:url(../fonts/NEON.woff2) format('woff2'),url(../fonts/NEON.woff) format('woff'),url(../fonts/NEON.TTF);font-display:swap}@font-face{font-family:Godsownjunkyard;src:url(../fonts/Godsownjunkyard-Regular.woff2) format('woff2'),url(../fonts/Godsownjunkyard-Regular.woff) format('woff'),url(../fonts/Godsownjunkyard-Regular.otf);font-display:swap}:root{--title-fz:80px;--title-fz-sec:44px;--text-fz:22px;--text-lh:37px;--bg-color:#131313;--bg-color-glitch:#080808;--logo-col:#FED128;--logo-col-2:#FB4264;--logo-shadow:#FA1C16;--logo-shadow-2:#806914;--shadow-col-1:#ff00cb;--text-col:#fff;--blue-glitch:#2fd9ea;--blue-bright:#5fe6e4;--violet-glitch:#62028a;--violet-bright:#d579fb;--pink-glitch:#8a0273;--pink-glitch-dark:#84036e;--aqua-glitch:#048282;--green-glitch:#296b0e;--violet-good:#9e638f;--about-glitch-col:blue;--cases-exp-col:#f743c9;--blue:rgba(70, 70, 206, .7)}body,html{background-color:var(--bg-color);margin:0;padding:0;font-family:Verdana;-webkit-tap-highlight-color:transparent}.parralax{content-visibility:auto;contain-intrinsic-size:1000px}.section_to_animate{height:100vh}.logo_capt{position:absolute;z-index:-1;opacity:0;font-size:24px;-webkit-animation:logoDisAppear 1.2s ease;animation:logoDisAppear 1.2s ease}@-webkit-keyframes logoDisAppear{0%,80%{z-index:1;opacity:1}99%{z-index:1;opacity:0}100%{z-index:-1}}@keyframes logoDisAppear{0%,80%{z-index:1;opacity:1}99%{z-index:1;opacity:0}100%{z-index:-1}}.logo__neon{position:relative;display:block;font-family:neon;font-size:136px;line-height:1;color:var(--logo-col);text-shadow:0 0 1vw var(--logo-shadow),0 0 3vw var(--logo-shadow),0 0 10vw var(--logo-shadow),0 0 10vw var(--logo-shadow),0 0 .4vw var(--logo-col),.5vw .5vw .1vw var(--logo-shadow-2)}.logo__neon-bot{padding-left:175px}.logo-invis{opacity:0}.logo-trick{position:absolute;left:26px;bottom:-18px;font-size:306px}.logo_wrap{position:relative;width:584px;height:272px;-webkit-transform:scale(1.25);-ms-transform:scale(1.25);transform:scale(1.25);background-color:var(--bg-color);cursor:pointer;text-align:left;-webkit-animation:logoAppear 2s ease;animation:logoAppear 2s ease}@-webkit-keyframes logoAppear{0%,50%{opacity:0}100%{opacity:1}}@keyframes logoAppear{0%,50%{opacity:0}100%{opacity:1}}.logo{position:absolute;top:0;left:0}.logo-based{-webkit-animation:switch1 17s step-start infinite;animation:switch1 17s step-start infinite}@-webkit-keyframes switch1{0%,100%,19%,20%,21%,39%,40%,42%,55%,56%,70%,95%{opacity:1;-webkit-transform:skew(0);transform:skew(0)}20.1%,20.9%,40.1%,41.9%,70.1%,94.9%{opacity:0}19.5%{-webkit-transform:skew(5deg);transform:skew(5deg)}39.5%{-webkit-transform:skew(15deg);transform:skew(15deg)}55.5%{-webkit-transform:skew(-5deg);transform:skew(-5deg)}}@keyframes switch1{0%,100%,19%,20%,21%,39%,40%,42%,55%,56%,70%,95%{opacity:1;-webkit-transform:skew(0);transform:skew(0)}20.1%,20.9%,40.1%,41.9%,70.1%,94.9%{opacity:0}19.5%{-webkit-transform:skew(5deg);transform:skew(5deg)}39.5%{-webkit-transform:skew(15deg);transform:skew(15deg)}55.5%{-webkit-transform:skew(-5deg);transform:skew(-5deg)}}.logo-glitch{-webkit-animation:switch2 17s step-start infinite;animation:switch2 17s step-start infinite}@-webkit-keyframes switch2{0%,100%,20%,21%,40%,42%,70%,95%{opacity:0}20.1%,20.9%,40.1%,41.9%,70.1%,94.9%{opacity:1}}@keyframes switch2{0%,100%,20%,21%,40%,42%,70%,95%{opacity:0}20.1%,20.9%,40.1%,41.9%,70.1%,94.9%{opacity:1}}.logo-shift{-webkit-animation:shift 17s step-start infinite;animation:shift 17s step-start infinite;-webkit-clip-path:polygon(0 20%,100% 20%,100% 40%,0 40%);clip-path:polygon(0 20%,100% 20%,100% 40%,0 40%);-webkit-transform:none;-ms-transform:none;transform:none;background:var(--bg-color-glitch)}.logo-shift-1{-webkit-clip-path:polygon(0 50%,100% 50%,100% 60%,0 60%);clip-path:polygon(0 50%,100% 50%,100% 60%,0 60%)}.logo-shift-2{-webkit-clip-path:polygon(0 0,100% 0,100% 10%,0 10%);clip-path:polygon(0 0,100% 0,100% 10%,0 10%)}.logo-shift-3{-webkit-clip-path:polygon(0 90%,100% 90%,100% 100%,0 100%);clip-path:polygon(0 90%,100% 90%,100% 100%,0 100%)}@-webkit-keyframes shift{0%,19%,20.1%,39%,40.1%,55%,56%,69%,70.1%,95%,95.2%,96%{-webkit-transform:none;transform:none;opacity:0}20%,40%,55.2%,55.8%,70%,95.4%,95.8%{-webkit-transform:translate(5px,-2px);transform:translate(5px,-2px);opacity:1}}@keyframes shift{0%,19%,20.1%,39%,40.1%,55%,56%,69%,70.1%,95%,95.2%,96%{-webkit-transform:none;transform:none;opacity:0}20%,40%,55.2%,55.8%,70%,95.4%,95.8%{-webkit-transform:translate(5px,-2px);transform:translate(5px,-2px);opacity:1}}.logo-glitch-shift{-webkit-animation:shift2 17s step-start infinite;animation:shift2 17s step-start infinite;-webkit-clip-path:polygon(0 20%,100% 20%,100% 50%,0 50%);clip-path:polygon(0 20%,100% 20%,100% 50%,0 50%);-webkit-transform:none;-ms-transform:none;transform:none;background:var(--bg-color-glitch)}@-webkit-keyframes shift2{0%,100%,20.5%,21%,41.5%,42%,94.2%,95%{-webkit-transform:none;transform:none;opacity:0}20.7%,20.9%,41.7%,41.9%,94.3%,94.9%{opacity:1;-webkit-transform:translate(5px,-2px);transform:translate(5px,-2px)}}@keyframes shift2{0%,100%,20.5%,21%,41.5%,42%,94.2%,95%{-webkit-transform:none;transform:none;opacity:0}20.7%,20.9%,41.7%,41.9%,94.3%,94.9%{opacity:1;-webkit-transform:translate(5px,-2px);transform:translate(5px,-2px)}}.logo_section{position:relative;z-index:2;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;height:100vh;background-color:var(--bg-color)}.glitch_hover_text-pseudo{display:none}.cases{overflow:hidden}.cases__swiper{display:none}.logo_section-transparent{z-index:unset}.logo_section-transparent .logo_wrap{z-index:3;background:0 0}
 	</style>
@@ -31,9 +29,6 @@
 	<script defer src="js/index.js"></script>
 
 	<script async defer data-domain="marka.link" src="https://plausible.io/js/plausible.js"></script>
-
-	<!-- <script defer src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-	<script defer src="js/slider.js"></script> -->
 
 	<title>MarkALink</title>
 
@@ -553,8 +548,5 @@
 	<a href="#" class="audio_controls audio_controls-active" title="Play/pause Arkana - Beyond the void. Link is in the bottom. Enjoy :)">
 		<div class="audio_control"></div>
 	</a>
-	<!-- slider -->
-	<!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-	<link rel="stylesheet" href="css/slider.css"> -->
 </body>
 </html>
