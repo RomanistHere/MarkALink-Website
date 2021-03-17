@@ -1386,6 +1386,14 @@
         width: 580px;
     }
 
+    .nav {
+        width: 580px;
+    }
+
+    .nav__link {
+        font-size: 100%;
+    }
+
     .logo_wrap {
         transform: none;
     }
@@ -1470,6 +1478,14 @@
 
     .about__wrap {
         width: 450px;
+    }
+
+    .nav {
+        width: 450px;
+    }
+
+    .nav__link {
+        font-size: 80%;
     }
 
     .title {
