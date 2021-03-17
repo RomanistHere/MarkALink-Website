@@ -1,3 +1,8 @@
+<IfModule mod_mime.c>
+    AddType application/woff2 .woff2
+    AddType application/x-font-woff2 .woff2
+</IfModule>
+
 # BEGIN Expire headers
 <IfModule mod_expires.c>
     # Turn on the module.
@@ -42,5 +47,10 @@
     Header always set X-Content-Type-Options "nosniff"
     Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' plausible.io unpkg.com; base-uri 'self'; media-src 'self'; connect-src 'self' plausible.io; img-src 'self'; style-src 'self' 'unsafe-inline' unpkg.com; font-src 'self' data:;"
 </IfModule>
+
+<FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|mp3|js|css|swf|svg|otf|ttf|eot|woff|woff2)$">
+    AddDefaultCharset UTF-8
+    DefaultLanguage en-US
+</FilesMatch>
 
 ErrorDocument 404 /pages/404.html
