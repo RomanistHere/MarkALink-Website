@@ -88,7 +88,7 @@ const startMusic = () => {
             audioBtn.classList.add('audio_controls-pause', 'audio_controls-active')
             setTimeout(() => { audioBtn.classList.remove('audio_controls-active') }, 1000)
         }).catch(e => {
-            // console.log(e)
+            console.log(e)
         })
     }
 }
@@ -337,7 +337,24 @@ const deAnimateSection = section => {
         state = { ...state, [timeoutRef]: setTimeout(() => { state = { ...state, [timeoutRef]: null } }, 3000) }
     }
 
-    setTimeout(() => { section.classList.remove('stateAnimated') }, 7000)
+    setTimeout(() => {
+        const animationObserver = new IntersectionObserver((entries, observer) => {
+            for (const entry of entries) {
+                const isPresent = entry.isIntersecting
+
+                if (!isPresent) {
+                    section.classList.remove('stateAnimated')
+                }
+            }
+
+            animationObserver.disconnect()
+        }, {
+            // fix for 100vh sections
+            threshold: .05
+        })
+
+        animationObserver.observe(section)
+    }, 7000)
 }
 
 const animateOnScroll = () => {
@@ -399,8 +416,61 @@ const watchForSections = () => {
     }, false)
 }
 
+const initSlider = () => {
+    const isLoaded = document.querySelectorAll('.slider-script')
+    if (isLoaded.length > 0) {
+        window.dispatchEvent(new Event('resize'))
+        return
+    }
+
+    const head = document.getElementsByTagName('head')[0]
+    const remoteCSS = document.createElement('link')
+    remoteCSS.href = 'https://unpkg.com/swiper/swiper-bundle.min.css'
+    remoteCSS.rel = 'stylesheet'
+    remoteCSS.type = 'text/css'
+    remoteCSS.media = 'all'
+    head.appendChild(remoteCSS)
+
+    remoteCSS.onload = () => {
+        const localCSS = document.createElement('link')
+        localCSS.href = 'css/slider.css'
+        localCSS.rel = 'stylesheet'
+        localCSS.type = 'text/css'
+        localCSS.media = 'all'
+        head.appendChild(localCSS)
+    }
+
+    const remoteScript = document.createElement("script")
+    remoteScript.src = 'https://unpkg.com/swiper/swiper-bundle.min.js'
+    document.body.appendChild(remoteScript)
+
+    remoteScript.onload = () => {
+        const localScript = document.createElement("script")
+        localScript.src = 'js/slider.js'
+        localScript.className = 'slider-script'
+        document.body.appendChild(localScript)
+    }
+}
+
+const watchSlider = () => {
+    const animationObserver = new IntersectionObserver((entries, observer) => {
+        for (const entry of entries) {
+            const isAppearing = entry.isIntersecting
+
+            if (isAppearing) {
+                initSlider()
+            }
+        }
+    }, {
+        threshold: .45
+    })
+
+    for (const element of $All('.lazyLoadSwiper')) {
+        animationObserver.observe(element)
+    }
+}
+
 const watchFullScreen = () => {
-    startMusic()
     window.addEventListener('resize', () => {
         var maxHeight = window.screen.height,
             maxWidth = window.screen.width,
@@ -409,6 +479,7 @@ const watchFullScreen = () => {
 
         if (maxWidth == curWidth && maxHeight == curHeight) {
             document.documentElement.classList.add('full_screen')
+            startMusic()
         } else {
             document.documentElement.classList.remove('full_screen')
         }
@@ -457,6 +528,7 @@ const initPassiveInteractive = () => {
 
     watchForSections()
     watchFullScreen()
+    watchSlider()
 
     initClickOnLogo()
 
