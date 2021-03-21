@@ -501,6 +501,7 @@ body {
     --color2: var(--blue-bright);
 
     position: absolute;
+    display: block;
 
     top: 20px;
     right: 20px;
@@ -519,8 +520,6 @@ body {
 }
 
 .exit {
-    display: block;
-
     height: 100%;
 
     -webkit-clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);

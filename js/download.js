@@ -18,9 +18,12 @@ changeBrowserLinks.forEach(elem => handleClickPrev(elem, (e) => {
     changeBrowserLinks.forEach(elem => elem.classList.remove('nav__click-active'))
     elem.classList.add('nav__click-active')
 
+
     currentShow.classList.remove('item-active')
     currentShow.classList.add('item-disactive')
+    currentShow.querySelector('a').tabIndex = '-1'
     nextShow.classList.add('item-active')
+    nextShow.querySelector('a').tabIndex = '0'
 
     setTimeout(() => {
         currentShow.classList.remove('item-disactive')
